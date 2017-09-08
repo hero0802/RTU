@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Page title -->
+<title>电磁防护智能监测与管理服务平台|站点告警</title>
+<!-- js文件 -->
+<script type="text/javascript" src="../resources/js/xhbootstrap.js"></script>
+<script type="text/javascript"
+	src="../resources/static/echarts/echarts.js"></script>
+<!--[if lte IE 9]>
+<script src="resources/js/jquery-1.8.3.min.js"></script>
+<script src="resources/js/respond.min.js"></script>
+<script src="resources/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<!-- class="boxed" -->
+<!-- class="fixed-small-header fixed-sidebar fixed-navbar fixed-footer" -->
+<body class="fixed-small-header fixed-sidebar fixed-navbar fixed-footer"
+	ng-app="app" ng-controller="alarm">
+	<!-- Simple splash screen-->
+	<div class="splash">
+		<div class="color-line"></div>
+		<div class="splash-title">
+			<h1>系统正在努力加载中，请耐心等待</h1>
+			<div class="spinner">
+				<div class="rect1"></div>
+				<div class="rect2"></div>
+				<div class="rect3"></div>
+				<div class="rect4"></div>
+				<div class="rect5"></div>
+			</div>
+		</div>
+	</div>
+	<!--[if lt IE 9]>
+<p class="alert alert-danger" style="z-index:2000;text-align:center;">你的浏览器版本过低，请更新你的版本.建议使用IE9+版本，google，火狐等浏览器 </p>
+<![endif]-->
+	<div ng-include="'top.html'"></div>
+	<!-- Navigation -->
+	<div ng-include="'data_menu.html'"></div>
+	<!-- Navigation   end-->
+	<!-- Main Wrapper -->
+	<div id="wrapper">
+		<div class="small-header transition animated fadeIn">
+			<div class="title-panel">
+				<div class="panel-body">
+					<div id="hbreadcrumb" class="pull-left">
+						<ol class="hbreadcrumb breadcrumb">
+							<li><span>数据分析</span></li>
+							<li><a href="alarmSiteList.html" target="_top"><span>站点告警</span></a></li>
+							<li class="active"><span>{{siteId}}号站点告警</span></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content animate-panel">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hpanel">
+						<div class="panel-body">
+							<div class="btn-group">
+								<button class="btn btn-danger btn-sm" onClick="xh.ExcelToDEvices()">
+									<i class="fa fa-file-excel-o"></i>&nbsp;导出站点设备告警数据
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hpanel">
+						<div class="panel-body">
+							<ul id="myTab" class="nav nav-tabs">
+								<li class="active"><a href="#tab-spd" data-toggle="tab">
+										SPD告警记录 <span class="badge">{{spd_totals}}</span>
+								</a></li>
+								<li><a href="#tab-r" data-toggle="tab">地阻监测告警记录<span
+										class="badge">{{r_totals}}</span></a></li>
+								<li><a href="#tab-i" data-toggle="tab">雷电流监测告警记录<span
+										class="badge">{{i_totals}}</span></a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="tab-spd">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="hpanel">
+												<div class="panel-body">
+													<div class="row">
+														<table id="tb-info" class="xh-table table-hover">
+															<thead>
+																<tr class="tr-success">
+																	<th>省份</th>
+																	<th>城市</th>
+																	<th>区县</th>
+																	<th>单位</th>
+																	<th width="70px">站点ID</th>
+																	<th>SPD在线监测仪ID</th>
+																	<th>SPD路数</th>
+																	<th>SPD名称</th>
+																	<th>防护等级</th>
+																	<th width="80px">状态</th>
+																	<th>获取时间</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr ng-if="spd_isNULL==1">
+																	<td colspan="12" class="text-center">没有告警记录！</td>
+																</tr>
+																<tr ng-repeat="x in spd_alarm">
+																	<td>{{x.province}}</td>
+																	<td>{{x.city}}</td>
+																	<td>{{x.county}}</td>
+																	<td>{{x.company}}</td>
+																	<td>{{x.siteId}}</td>
+																	<td style="text-align: center">{{x.deviceId}}</td>
+																	<td>{{x.model}}</td>
+																	<td>{{x.name}}</td>
+																	<td>{{x.level}}</td>
+																	<td ng-if="x.status!=0" class="td-error"
+																		style="text-align: center">异常</td>
+																	<td ng-if="x.status==0" class="td-success"
+																		style="text-align: center">正常</td>
+																	<td style="text-align: center">{{x.time}}</td>
+																	<!-- <td ng-if="x.ok==0"><a href="#" class="text-danger"
+																ng-click="sureAlarm(x.id)"><i class="fa fa-gavel"></i>|
+																	请确认</a></td>
+															<td ng-if="x.ok==1"><i class="fa fa-hand-pointer-o"></i>已经确认</td> -->
+																</tr>
+															</tbody>
+														</table>
+														<div class="page">
+															<div class="page-info">
+																每页显示 <select id="spd-page-limit" ng-change="refresh()"
+																	ng-model="count">
+																	<option value="10">10</option>
+																	<option value="20">20</option>
+																</select> 条, <span ng-model="index">显示{{spd_index}}-</span><span
+																	ng-model="lastIndex">{{spd_lastIndex}}条,</span> <span
+																	ng-model="totals">总计{{spd_totals}}条</span>
+															</div>
+															<div class="page-paging" id="spd-page"></div>
+														</div>
+													</div>
+													<!-- row -->
+												</div>
+												<!-- panel-body -->
+											</div>
+											<!-- hpanel -->
+										</div>
+									</div>
+								</div>
+								<!-- tab-spd -->
+								<div class="tab-pane fade" id="tab-r">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="hpanel">
+
+												<div class="panel-body">
+													<div class="row">
+														<table id="tb-info" class="xh-table table-hover">
+															<thead>
+																<tr class="tr-primary">
+																	<th>省份</th>
+																	<th>城市</th>
+																	<th>区县</th>
+																	<th>单位</th>
+																	<th width="70px">站点ID</th>
+																	<th>地阻在线监测仪ID</th>
+																	<th>地阻监测点</th>
+																	<th>地阻监测点名称</th>
+																	<th width="120px">告警值（Ω）</th>
+																	<th>告警时间</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr ng-if="r_isNULL==1">
+																	<td colspan="12" class="text-center">没有告警记录！</td>
+																</tr>
+																<tr ng-repeat="x in r_alarm">
+																	<td>{{x.province}}</td>
+																	<td>{{x.city}}</td>
+																	<td>{{x.county}}</td>
+																	<td>{{x.company}}</td>
+																	<td>{{x.siteId}}</td>
+																	<td>{{x.deviceId}}</td>
+																	<td>{{x.model}}</td>
+																	<td>{{x.modelName}}</td>
+																	<td class="td-error" style="text-align: center">{{x.value}}</td>
+																	<td style="text-align: center">{{x.time}}</td>
+																	<!-- <td ng-if="x.ok==0"><a href="#" class="text-danger"
+																ng-click="sureAlarm(x.id)"><i class="fa fa-gavel"></i>|
+																	请确认</a></td>
+															<td ng-if="x.ok!=0"><i class="fa fa-hand-pointer-o"></i>已经确认</td> -->
+																</tr>
+															</tbody>
+														</table>
+														<div class="page">
+															<div class="page-info">
+																每页显示 <select id="r-page-limit" ng-change="refresh()"
+																	ng-model="count">
+																	<option value="10">10</option>
+																	<option value="20">20</option>
+																</select> 条, <span ng-model="index">显示{{r_index}}-</span><span
+																	ng-model="lastIndex">{{r_lastIndex}}条,</span> <span
+																	ng-model="totals">总计{{r_totals}}条</span>
+															</div>
+
+															<div class="page-paging" id="r-page"></div>
+														</div>
+													</div>
+													<!-- row -->
+												</div>
+
+												<!-- panel-body -->
+											</div>
+											<!-- hpanel -->
+										</div>
+									</div>
+								</div>
+								<!-- tab-r -->
+								<div class="tab-pane fade" id="tab-i">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="hpanel">
+
+												<div class="panel-body">
+													<div class="row">
+														<table id="tb-info" class="xh-table table-hover">
+															<thead>
+																<tr class="tr-danger">
+																	<th>省份</th>
+																	<th>城市</th>
+																	<th>区县</th>
+																	<th>单位</th>
+																	<th width="70px">站点ID</th>
+																	<th>雷电流在线监测仪ID</th>
+																	<th>名称</th>
+																	<th width="120px">告警值(KA)</th>
+																	<th>告警时间</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr ng-if="i_isNULL==1">
+																	<td colspan="12" class="text-center">没有告警记录！</td>
+																</tr>
+																<tr ng-repeat="x in i_alarm">
+																	<td>{{x.province}}</td>
+																	<td>{{x.city}}</td>
+																	<td>{{x.county}}</td>
+																	<td>{{x.company}}</td>
+																	<td>{{x.siteId}}</td>
+																	<td>{{x.deviceId}}</td>
+																	<td>{{x.name}}</td>
+																	<td class="td-error" style="text-align: center">{{x.value}}</td>
+																	<td style="text-align: center">{{x.time}}</td>
+																	<!-- 
+															<td ng-if="x.ok==0"><a href="#" class="text-danger"
+																ng-click="sureAlarm(x.id)"><i class="fa fa-gavel"></i>|
+																	请确认</a></td>
+															<td ng-if="x.ok==1"><i class="fa fa-hand-pointer-o"></i>已经确认</td> -->
+																</tr>
+															</tbody>
+														</table>
+														<div class="page">
+															<div class="page-info">
+																每页显示 <select id="i-page-limit" ng-change="refresh()"
+																	ng-model="count">
+																	<option value="10">10</option>
+																	<option value="10">20</option>
+																</select> 条, <span ng-model="index">显示{{i_index}}-</span><span
+																	ng-model="lastIndex">{{i_lastIndex}}条,</span> <span
+																	ng-model="totals">总计{{i_totals}}条</span>
+															</div>
+
+															<div class="page-paging" id="i-page"></div>
+														</div>
+													</div>
+													<!-- row -->
+												</div>
+												<!-- panel-body -->
+
+											</div>
+											<!-- hpanel -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- row -->
+		</div>
+	</div>
+	<!-- Main Wrapper end -->
+	<aside id="aside-right" class="animated fadeInRight">
+		<p>按条件筛选</p>
+	</aside>
+	<!-- Footer-->
+	<footer class="footer" ng-include="'footer.html'"> </footer>
+	<div class="scroll-top text-info animated fadeIn top-hide">
+		<i class="fa fa-chevron-circle-up fa-3x"></i>
+	</div>
+	<script type="text/javascript" src="../controller/alarm.js"></script>
+	<script type="text/javascript">
+		xh.loadData();
+		$(".showSetting").click(function() {
+			$("#aside-right").fadeToggle("fast");
+		});
+	</script>
+</body>
+</html>

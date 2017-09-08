@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Page title -->
+<title>电磁防护智能监测与管理服务平台|注册</title>
+<!-- js文件 -->
+<script type="text/javascript" src="../resources/js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../resources/js/angular.min.js"></script>
+<script type="text/javascript"
+	src="../resources/static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="../resources/js/bootstrapValidator.min.js"></script>
+<script type="text/javascript"
+	src="../resources/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="../resources/js/paging.js"></script>
+<script type="text/javascript" src="../resources/js/xh-extra.js"></script>
+<script type="text/javascript" src="../resources/js/xh-menu.js"></script>
+<script type="text/javascript" src="../resources/js/xh-table.js"></script>
+<script type="text/javascript" src="../resources/js/xh.js"></script>
+<script type="text/javascript" src="../resources/js/xh-controller.js"></script>
+<!-- css文件 -->
+<link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+<!-- sweet-alert -->
+<script type="text/javascript"
+	src="../resources/static/sweetalert/lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../resources/static/sweetalert/lib/sweet-alert.css">
+<!-- toastr -->
+<script type="text/javascript"
+	src="../resources/static/toastr/build/toastr.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../resources/static/toastr/build/toastr.min.css">
+<!--[if lte IE 9]>
+<script src="../resources/js/jquery-1.8.3.min.js"></script>
+<script src="../resources/js/respond.min.js"></script>
+<script src="../resources/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+	<!-- Simple splash screen-->
+	<div class="splash">
+		<div class="color-line"></div> 
+		<div class="splash-title">
+			<h1>系统正在努力加载中，请耐心等待</h1>
+			<div class="spinner">
+				<div class="rect1"></div>
+				<div class="rect2"></div>
+				<div class="rect3"></div>
+				<div class="rect4"></div>
+				<div class="rect5"></div>
+			</div>
+		</div>
+	</div>
+	<!--[if lt IE 9]>
+<p class="alert alert-danger" style="z-index:2000;text-align:center;">你的浏览器版本过低，请更新你的版本.建议使用IE9+版本，google，火狐等浏览器 </p>
+<![endif]-->
+	<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1;margin:0;padding:0">    
+<img src="../resources/images/img/main.jpg" height="100%" width="100%"/>    
+</div> 
+	<div class="register-container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center m-b-md">
+					<h3 style="color:#fff;">注册账号</h3>
+					<small>注册账号后，请牢记自己的账号密码</small>
+				</div>
+				<div class="hpanel">
+					<div class="panel-body">
+						<form action="#" id="registerForm" onSubmit="return false">
+							<div class="row">
+								<div class="form-group col-lg-12">
+									<label>用户名</label> <input type="text" value="" id=""
+										class="form-control" name="username">
+								</div>
+								<div class="form-group col-lg-6">
+									<label>密&nbsp;码</label> <input type="password" value="" id=""
+										class="form-control" name="password">
+								</div>
+								<div class="form-group col-lg-6">
+									<label>重复密码</label> <input type="password" value="" id=""
+										class="form-control" name="repassword">
+								</div>
+								<div class="form-group col-lg-6">
+									<label>邮箱地址</label> <input type="email" value="" id=""
+										class="form-control" name="email">
+								</div>
+								<div class="form-group col-lg-6">
+									<label>联系电话</label> <input type="text" value="" id=""
+										class="form-control" name="tel">
+								</div>
+								<div class="text-center">
+									<button class="btn btn-green" id="register" type="submit">注册</button>
+									<a class="btn btn-primary" style="margin-left:30px;" id="reset">重置</a>
+								</div>
+								<div class="pull-right"><a class="back_login" style="margin-right:20px;"
+										href="login.html">返回登录<i class="fa fa-arrow-right"></i></a></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<strong>防雷软件管理系统</strong><span style="color:#fff"> - V1.0 2016 Copyright 亚光电子</span>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../controller/user.js"></script>
+	<script type="text/javascript">
+	var faIcon = {
+			valid: 'fa fa-check-circle fa-lg text-success',
+			invalid: 'fa fa-times-circle fa-lg',
+			validating: 'fa fa-refresh'
+		};
+	$('#registerForm').bootstrapValidator({
+		excluded: [':disabled'],
+		/* feedbackIcons: faIcon, */
+		fields: {
+		username: {
+			placement: "right",
+			validators: {
+				notEmpty: {},
+				 stringLength: {
+                     min: 5,
+                     max: 12,
+                     message: '用户名长度[5-12]'
+                 },
+                 regexp: {
+                     regexp: /^[a-zA-Z0-9_]+$/,
+                     message: '用户名只能包含大写、小写、数字和下划线'
+                   }
+			}
+		},
+		password: {
+			validators: {
+				notEmpty: {}
+			}
+		},
+		email:{
+			validators:{
+		        emailAddress: {}
+			}
+		},
+		repassword:{
+			validators:{
+			notEmpty:{},
+			callback: {
+		          message: '两次密码不一致',
+		          callback:function(value, validator,$field){
+		            var begin = $("input[name='password']").val();
+		            return value==begin;
+		          }
+		        }
+		      }
+		}
+		}
+	}).on('success.form.bv', function(e, data) {
+		e.preventDefault();
+		xh.register();
+	});
+/* $("#registerForm").submit(function(){
+	if($("input[name='username']").val()==""){
+		alert("用户名不能为空");
+		return ;
+	}
+	if($("input[name='password']").val()==""){
+		alert("密码不能为空");
+		return ;
+	}
+	if($("input[name='password']").val()!=$("input[name='repassword']").val()){
+		alert("两次密码输入不一致");
+		return ;
+	}
+	register();
+}); */
+$("#reset").click(function(){
+	$("#registerForm")[0].reset();
+})
+</script>
+</body>
+</html>

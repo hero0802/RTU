@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <WebDataBase>
+       <ip>127.0.0.1</ip>
+       <port>3306</port>
+       <root>root</root>
+       <password>xinhong12345</password>
+       <dbname>xhrtu</dbname>
+    </WebDataBase>
+    
+    <centerNet>
+       <center_ip>182.61.10.202</center_ip>
+       <center_port>23006</center_port>
+    </centerNet>
+    
+    <Other>
+      <session_prefix>cms_</session_prefix>
+     </Other>
+     
+    <I>
+     <I_listenner>1</I_listenner>
+     <self_clock>30</self_clock>
+    </I>
+   <System>
+    <r_time>5</r_time>
+    <i_time>5</i_time>
+    <spd_time>5</spd_time>
+    <i_value_count>10</i_value_count>
+   </System>
+
+</config>

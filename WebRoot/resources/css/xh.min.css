@@ -1,0 +1,253 @@
+@CHARSET "UTF-8";
+html,body {
+	min-width: 290px;
+	-ms-overflow-style: scrollbar
+}
+
+body {
+	background-color: #ecf0f5;
+	font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #758697;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased!important
+}
+/* 网页容器 */
+#container {
+	min-height: 100vh;
+	height: auto;
+	position: relative;
+	min-width: 290px;
+	overflow: hidden
+}
+#navbar {
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+	background-color: #ecf0f5;
+	left: 0;
+	top: 0
+}
+#navbar-container {
+	box-shadow: 0 0 2px 0 rgba(0,0,0,0.2)
+}
+.navbar-header {
+	left: 0;
+	position: relative;
+	float: none;
+	background-color: #263238
+}
+
+.navbar-content {
+	position: relative;
+	left: 0;
+	background-color: #fff
+}
+.navbar-brand {
+	background-color: transparent;
+	color: #fff;
+	padding: 0;
+	height: 40px;
+	position: relative;
+	z-index: 2;
+	overflow: hidden;
+	width: 220px
+}
+
+.navbar-brand:hover,.navbar-brand:focus {
+	color: #fff
+}
+
+.brand-title,.brand-icon {
+	display: block;
+	line-height: 40px
+}
+
+.brand-icon {
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 0 5px
+}
+
+.brand-text {
+	display: block;
+	font-size: 18px;
+	font-weight: 600
+}
+.navbar-icon-color,.navbar-top-links>li>a:focus:not(.mainnav-toggle)>i,.navbar-top-links>li>a:hover:not(.mainnav-toggle)>i {
+	color: #6d7e90;
+	transition: color .4s
+}
+
+.navbar-top-links>li {
+	float: left
+}
+
+.navbar-top-links>li>a {
+	display: table-cell;
+	padding: 0 12px;
+	vertical-align: middle;
+	height: 40px;
+	color: #758697;
+	transition: all .4s
+}
+
+.navbar-top-links>li>a:not(.mainnav-toggle)>i {
+	color: #758697;
+	transition: color .4s
+}
+
+.navbar-top-links>li>a:focus {
+	background-color: transparent
+}
+
+.navbar-top-links>li>a:hover {
+	background-color: #f2f2f2;
+	color: #6f8193;
+	transition: all .4s
+}
+
+.navbar-top-links>li>a>i {
+	font-size: 1.2em;
+	line-height: .75em
+}
+
+.navbar-top-links:first-child>li {
+	border-right: 1px solid rgba(0,0,0,0.05)
+}
+
+.navbar-top-links:last-child>li {
+	border-left: 1px solid rgba(0,0,0,0.05)
+}
+
+.navbar-top-links>.open>a,.navbar-top-links>.open>a:focus {
+	background-color: #f2f2f2;
+	color: #758697
+}
+
+.navbar-top-links .dropdown-menu .panel-body {
+	padding: 0
+}
+
+.navbar-top-links .dropdown-menu .nano:not(.scrollable) {
+	max-height: 180px
+}
+
+.navbar-top-links .dropdown-menu .nano:not(.scrollable) .nano-content {
+	position: static
+}
+
+.navbar-top-links .tgl-menu-btn {
+	position: absolute;
+	top: -100%;
+	right: 0
+}
+
+.navbar-top-links .tgl-menu-btn>a,.navbar-top-links .tgl-menu-btn>a:hover,.navbar-top-links .tgl-menu-btn>a:focus {
+	color: #fff
+}
+
+.navbar-top-links .tgl-menu-btn>a:hover,.navbar-top-links .tgl-menu-btn a:focus {
+	background-color: transparent
+}
+
+.navbar-top-links .head-list {
+	list-style: none;
+	padding: 0;
+	margin: 0
+}
+
+.navbar-top-links .head-list li a {
+	display: block;
+	padding: 10px 15px;
+	background: transparent
+}
+
+.navbar-top-links .head-list li a:hover {
+	background: rgba(0,0,0,0.05);
+	color: #758697
+}
+
+.badge-header {
+	position: absolute;
+	font-size: .85em;
+	font-weight: normal;
+	top: 50%;
+	margin-top: -1.5em;
+	min-width: 1.85em;
+	padding: 3px 5px;
+	right: 3px
+}
+
+.badge-header:empty {
+	display: inline;
+	border-radius: 50%;
+	min-width: 0;
+	padding: 5px;
+	right: .55em;
+	top: 2.2em;
+	animation-iteration-count: 5
+}
+
+.navbar-top-links .dropdown-menu .nano {
+	max-height: 265px
+}
+
+.img-user {
+	width: 32px;
+	height: 32px;
+	box-shadow: 0 0 0 2px rgba(0,0,0,0.1)
+}
+
+#dropdown-user .ic-user {
+	font-size: 1.5em;
+	line-height: 40px
+}
+
+.username {
+	float: right;
+	white-space: nowrap;
+	line-height: 40px;
+	margin: 0 10px
+}
+#mainnav-container {
+	position: absolute;
+	width: 220px;
+	left: -220px;
+	padding-top: 40px;
+	top: 0;
+	bottom: 0;
+	z-index: 4;
+	min-height: 100%
+}
+
+#mainnav {
+	height: 100%;
+	background-color: #263238
+}
+
+#mainnav .list-header {
+	font-weight: 600;
+	color: #747e88
+}
+
+#mainnav .list-divider {
+	border-color: rgba(0,0,0,0.1);
+	margin: 10px 0
+}
+
+#mainnav-menu-wrap {
+	height: 100%
+}
+
+#mainnav-shortcut {
+	overflow: hidden
+}
+
+#container:not(.mainnav-sm) #mainnav-shortcut {
+	margin-top: 10px;
+	margin-bottom: 10px
+}

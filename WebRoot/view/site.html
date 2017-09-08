@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Page title -->
+<title>电磁防护智能监测与管理服务平台|站点配置</title>
+<!-- js文件 -->
+<script type="text/javascript" src="../resources/js/xhbootstrap.js"></script>
+<!--[if lte IE 9]>
+<script src="../resources/js/jquery-1.8.3.min.js"></script>
+<script src="../resources/js/respond.min.js"></script>
+<script src="../resources/js/html5shiv.js"></script>
+<![endif]-->
+<style type="text/css">
+.r-show {
+	display: none
+}
+</style>
+</head>
+<!-- class="boxed" -->
+<!-- class="fixed-small-header fixed-sidebar fixed-navbar fixed-footer" -->
+<body class="fixed-small-header fixed-sidebar fixed-navbar fixed-footer"
+	ng-app="app" ng-controller="site" onload="xh.initProvince_p()">
+	<!-- Simple splash screen-->
+	<div class="splash">
+		<div class="color-line"></div>
+		<div class="splash-title">
+			<h1>系统正在努力加载中，请耐心等待</h1>
+			<div class="spinner">
+				<div class="rect1"></div>
+				<div class="rect2"></div>
+				<div class="rect3"></div>
+				<div class="rect4"></div>
+				<div class="rect5"></div>
+			</div>
+		</div>
+	</div>
+	<div ng-include="'top.html'"></div>
+	<!-- Navigation -->
+	<div ng-include="'system_menu.html'"></div>
+	<!-- Navigation   end-->
+	<!-- Main Wrapper -->
+	<div id="wrapper">
+		<div class="small-header transition animated fadeIn">
+			<div class="title-panel">
+				<div class="panel-body">
+					<div id="hbreadcrumb" class="pull-left">
+						<ol class="hbreadcrumb breadcrumb">
+							<li><span>配置设置</span></li>
+							<li class="active"><span>站点配置</span></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content animate-panel">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hpanel hgreen">
+						<!-- <div class="panel-heading hbuilt">
+							<div class="panel-tools">
+								<a class="showhide"><i class="fa fa-chevron-up"></i></a> <a
+									class="closebox"><i class="fa fa-times"></i></a>
+							</div>
+							站点信息列表
+						</div> -->
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="btn-group">
+										<button class="btn btn-success btn-sm" ng-disabled="!add"
+											ng-click="In()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;添加站点
+										</button>
+										<button class="btn btn-primary btn-sm" ng-disabled="!add"
+											ng-click="Md(0)" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;智能数字量采集器管理
+										</button>
+										<button class="btn btn-primary btn-sm" ng-disabled="!add"
+											ng-click="spd()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;SPD管理
+										</button>
+										<button class="btn btn-primary btn-sm" ng-disabled="!add"
+											ng-click="R()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;地阻在线监测管理
+										</button>
+										<button class="btn btn-primary btn-sm" ng-disabled="!add"
+											ng-click="I()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;雷电流在线监测管理
+										</button>
+										<button class="btn btn-danger btn-sm" ng-disabled="!add"
+											onClick="xh.newBtn()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;静电在线监测管理
+										</button>
+										<button class="btn btn-danger btn-sm" ng-disabled="!add"
+											onClick="xh.newBtn()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;杂散电流在线监测管理
+										</button>
+										<button class="btn btn-danger btn-sm" ng-disabled="!add"
+											onClick="xh.newBtn()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;阴极保护在线监测管理
+										</button>
+										<button class="btn btn-danger btn-sm" ng-disabled="!add"
+											onClick="xh.newBtn()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;气象信息在线监测管理
+										</button>
+										<button class="btn btn-danger btn-sm" ng-disabled="!add"
+											onClick="xh.newBtn()" style="margin-top:5px;">
+											<i class="fa fa-plus"></i>&nbsp;电力铁塔安全隐患在线监测管理
+										</button>
+										<button class="btn btn-danger btn-sm" ng-click="delMore()"
+											ng-disabled="!dele" style="margin-top:5px;">
+											<i class="fa fa-trash"></i>&nbsp;批量删除
+										</button>
+										<button class="btn btn-warning btn-sm" ng-click="refresh()"
+											style="margin-top:5px;">
+											<i class="fa fa-refresh"></i>&nbsp;刷新
+										</button>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="row"><div class="col-md-12">
+						<div class="btn-group" style="padding-top:5px; padding-bottom:10px;">
+								<button class="btn btn-danger btn-sm" 
+									 ng-disabled="!add" onClick="xh.newBtn()">
+									<i class="fa fa-plus"></i>&nbsp;静电在线监测管理
+								</button>
+								<button class="btn btn-danger btn-sm" ng-disabled="!add"
+									onClick="xh.newBtn()">
+									<i class="fa fa-plus"></i>&nbsp;杂散电流在线监测管理
+								</button>
+								<button class="btn btn-danger btn-sm" ng-disabled="!add"
+									onClick="xh.newBtn()">
+									<i class="fa fa-plus"></i>&nbsp;阴极保护在线监测管理
+								</button>
+								<button class="btn btn-danger btn-sm" ng-disabled="!add"
+									onClick="xh.newBtn()">
+									<i class="fa fa-plus"></i>&nbsp;气象信息在线监测管理
+								</button>
+								<button class="btn btn-danger btn-sm" ng-disabled="!add"
+									onClick="xh.newBtn()">
+									<i class="fa fa-plus"></i>&nbsp;电力铁塔安全隐患在线监测管理
+								</button>
+								
+							</div>
+						</div></div> -->
+
+							<table id="tb-info" class="xh-table table-hover">
+								<thead>
+									<tr class="tr-green">
+										<th rowspan="2" width="30px"><input type="checkbox"
+											id="table-checkbox" class="table-check" /></th>
+										<!-- <th  rowspan="2">#</th> -->
+										<th width="70px">站点ID</th>
+										<th>站点名称</th>
+										<th>行业</th>
+										<th>省份</th>
+										<th>城市</th>
+										<th>区县</th>
+										<th>单位</th>
+										<th>经度</th>
+										<th>纬度</th>
+										<th rowspan="2" width="100px">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-if="isNULL==1">
+										<td colspan="10" class="text-center">没有查询到数据！</td>
+									</tr>
+									<tr ng-repeat="x in data">
+										<td><input type="checkbox" name="tb-check"
+											value="{{x.id}}" siteIdVal="{{x.siteId}}" /></td>
+										<td>{{x.siteId}}</td>
+										<td>{{x.name}}</td>
+										<td>{{x.trade}}</td>
+										<td>{{x.province}}</td>
+										<td>{{x.city}}</td>
+										<td>{{x.county}}</td>
+										<td>{{x.company}}</td>
+										<td>{{x.lon}}</td>
+										<td>{{x.lat}}</td>
+										<td><a class="text-success" ng-click="update($index)"
+											data-toggle="modal" data-target="#update"
+											ng-if="update_btn==1"> <i class="fa fa-edit"></i>修改
+										</a> <span class="text-gray" ng-if="update_btn==0"> <i
+												class="fa fa-edit"></i>修改
+										</span> | <a class="text-danger" ng-click="del(x.id)" ng-if="dele==1">
+												<i class="fa fa-trash"></i>删除
+										</a> <span class="text-gray" ng-if="dele==0"> <i
+												class="fa fa-trash"></i>删除
+										</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="panel-footer">
+							<table class="page-table" border="0" frame=void>
+								<tr>
+									<td>
+										<div class="page-info">
+											每页显示 <select id="page-limit" ng-change="refresh()"
+												ng-model="count">
+												<option value="10">10</option>
+												<option value="25">25</option>
+												<option value="50">50</option>
+											</select> 条, <span ng-model="index">显示{{index}}-</span><span
+												ng-model="lastIndex">{{lastIndex}}条,</span> <span
+												ng-model="totals">总计{{totals}}条</span>
+										</div>
+									</td>
+									<td>
+										<div class="page-paging"></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- row -->
+				</div>
+			</div>
+		</div>
+
+
+		<!-- MD44弹框 -->
+		<div class="modal fade" id="md44" tabindex="-1" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">智能数字量采集器管理&nbsp;&nbsp;&nbsp;站点ID->{{siteIdVal}}</small>
+						<a href="#" style="margin-left:50px;color:blue"
+							data-toggle="modal" data-target="#md44-add-window" ng-click=""><i
+							class="fa fa-plus"></i>&nbsp;|添加智能数字量采集器管理</a>
+					</div>
+					<div class="modal-body pad-0" style="margin:2px;padding:2px;">
+						<table id="tb-info" class="xh-table table-hover"
+							style="text-align: center;">
+							<thead>
+								<tr class="tr-primary">
+									<th width="130px">智能数字量采集器ID</th>
+									<th>名称</th>
+									<th>型号</th>
+									<th>位置</th>
+									<th width="120px">操作</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="m_isNULL==0">
+									<td colspan="5" class="text-center">没有查询到数据！</td>
+								</tr>
+								<tr ng-repeat="x in m_data">
+									<!-- spd -->
+									<td>{{x.deviceId}}</td>
+									<td>{{x.name}}</td>
+									<td>{{x.type}}</td>
+									<td>{{x.address}}</td>
+									<td><a class="text-success"
+										ng-click="showUpdateMd44Window($index)" ng-if="update_btn==1">
+											<i class="fa fa-edit"></i>修改
+									</a> <span class="text-gray" ng-if="update_btn==0"> <i
+											class="fa fa-edit"></i>修改
+									</span> | <a class="text-danger" ng-click="del_md44($index)"
+										ng-if="dele==1"> <i class="fa fa-trash"></i>删除
+									</a> <span class="text-gray" ng-if="dele==0"> <i
+											class="fa fa-trash"></i>删除
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger btn-sm"
+							data-dismiss="modal">
+							<i class="fa fa-remove"></i>&nbsp;关闭
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="md44-window" tabindex="2" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">智能数字量采集器管理</small>
+					</div>
+					<div class="modal-body" style="margin:2px;padding:2px;">
+						<button class="btn btn-primary btn-sm" ng-disabled="!add"
+							ng-click="spd()">
+							<i class="fa fa-plus"></i>&nbsp;SPD管理
+						</button>
+						<button class="btn btn-primary btn-sm" ng-disabled="!add"
+							ng-click="R()">
+							<i class="fa fa-plus"></i>&nbsp;在线地阻监测仪管理
+						</button>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger btn-sm"
+							data-dismiss="modal">
+							<i class="fa fa-remove"></i>&nbsp;关闭
+						</button>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- 	SPD管理 -->
+		<div class="modal fade" id="spd" tabindex="-1" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">SPD管理&nbsp;&nbsp;&nbsp;站点编号->{{siteIdVal}}</small>
+						<a href="#" style="margin-left:50px;color:blue"
+							data-toggle="modal" ng-click="Md(1)"
+							data-target="#spd-add-window"><i class="fa fa-plus"></i>&nbsp;|添加SPD</a>
+					</div>
+					<div class="modal-body ">
+						<table id="tb-info" class="xh-table table-hover">
+							<thead>
+								<tr class="tr-primary">
+									<!-- spd -->
+									<th width="150px">SPD在线监测仪ID</th>
+									<th>智能数字量采集器ID</th>
+									<th>型号</th>
+									<th>名称</th>
+									<th>SPD路数(数字)</th>
+									<th>位置</th>
+									<th>防护等级(数字)</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="spd_isNULL==1">
+									<td colspan="17" class="text-center">没有查询到数据！</td>
+								</tr>
+								<tr ng-repeat="x in spd_data">
+									<!-- spd -->
+									<td>{{x.deviceId}}</td>
+									<td>{{x.md44id}}</td>
+									<td>{{x.type}}</td>
+									<td>{{x.name}}</td>
+									<td>{{x.model}}</td>
+									<td>{{x.address}}</td>
+									<td>{{x.level}}</td>
+									<td><a class="text-success"
+										ng-click="showUpdateSpdWindow($index)" ng-if="update_btn==1">
+											<i class="fa fa-edit"></i>修改
+									</a> <span class="text-gray" ng-if="update_btn==0"> <i
+											class="fa fa-edit"></i>修改
+									</span> | <a class="text-danger" ng-click="del_spd($index)"
+										ng-if="dele==1"> <i class="fa fa-trash"></i>删除
+									</a> <span class="text-gray" ng-if="dele==0"> <i
+											class="fa fa-trash"></i>删除
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer"></div>
+				</div>
+			</div>
+		</div>
+		<!-- 	SPD管理 ---end -->
+		<!-- 	SPD管理-->
+		<div class="modal fade" id="spd-add-window" tabindex="2" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">SPD管理{{spdStr}}</small>
+					</div>
+					<div class="modal-body" style="margin:2px;padding:2px;">
+						<form action="#" id="spd-add-form" onSubmit="return false">
+							<input type="hidden" value="{{siteIdVal}}" class="form-control"
+								name="siteId" ng-model="siteIdVal">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-6">
+										<label>SPD在线监测仪ID</label> <input type="text" value=""
+											ng-model="md44_deviceId" class="form-control"
+											name="spd_deviceId" readonly="readonly">
+									</div>
+									<div class="form-group col-lg-6">
+										<label>智能数字量采集器ID</label> <input type="text" value=""
+											ng-model="md44_deviceId" class="form-control"
+											name="spd_md44id" readonly="readonly">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-6">
+										<label>位置</label> <input type="text" value=""
+											class="form-control" name="spd_address">
+									</div>
+									<div class="form-group col-lg-6">
+										<label>型号</label> <input type="text" value=""
+											class="form-control" name="spd_type">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group col-lg-6">
+											<label>SPD名称</label> <input type="text" value=""
+												class="form-control" name="spd_name">
+										</div>
+										<div class="form-group col-lg-6">
+											<label>SPD路数(数字)</label> <input type="text" value=""
+												class="form-control" name="spd_model">
+										</div>
+
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group col-lg-6">
+											<label>防护等级(数字)</label> <input type="text" value=""
+												class="form-control" name="spd_level">
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger btn-sm"
+							data-dismiss="modal">
+							<i class="fa fa-remove"></i>&nbsp;关闭
+						</button>
+						<button type="button" class="btn btn-success btn-sm"
+							id="spd_add_btn">
+							<i class="fa fa-plus"></i>&nbsp;添加
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="spd-update-window" tabindex="2"
+			role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">SPD管理{{spdStr}}</small>
+					</div>
+					<div class="modal-body" style="margin:2px;padding:2px;">
+						<form action="#" id="spd-update-form" onSubmit="return false">
+							<input type="hidden" value="{{siteIdVal}}" class="form-control"
+								name="siteId" ng-model="siteIdVal">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-5">
+										<label>SPD在线监测仪ID</label> <input type="text" value=""
+											class="form-control" name="spd_deviceId"
+											ng-model="spd_deviceId" readonly="readonly">
+									</div>
+									<div class="form-group col-lg-7">
+										<label>智能数字量采集器ID</label> <input type="text" value=""
+											class="form-control" name="spd_md44id"
+											ng-model="spd_deviceId" readonly="readonly">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-5">
+										<label>位置</label> <input type="text" value=""
+											class="form-control" name="spd_address"
+											ng-model="spd_address">
+									</div>
+									<div class="form-group col-lg-7">
+										<label>型号</label> <input type="text" value=""
+											class="form-control" name="spd_type" ng-model="spd_type">
+									</div>
+
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-5">
+										<label>SPD名称</label> <input type="text" value=""
+											class="form-control" name="spd_name" ng-model="spd_name">
+									</div>
+									<div class="form-group col-lg-7">
+										<label>SPD路数(数字)</label> <input type="text" value=""
+											class="form-control" name="spd_model" ng-model="spd_model">
+									</div>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-7">
+										<label>防护等级(数字)</label> <input type="text" value=""
+											class="form-control" name="spd_level" ng-model="spd_level">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger btn-sm"
+							data-dismiss="modal">
+							<i class="fa fa-remove"></i>&nbsp;关闭
+						</button>
+						<button type="button" class="btn btn-success btn-sm"
+							id="spd_save_btn" ng-show="!add_btn">
+							<i class="fa fa-save"></i>&nbsp;保存
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 	SPD管理 ---end -->
+
+
+
+
+
+
+		<!-- 	雷电流管理 -->
+		<div class="modal fade" id="site_i" tabindex="-1" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">雷电流在线监测管理&nbsp;&nbsp;&nbsp;站点编号->{{siteIdVal}}</small>
+						<a href="#" style="margin-left:50px;color:blue"
+							data-toggle="modal" data-target="#i-window"
+							ng-click="showAddIWindow()"><i class="fa fa-plus"></i>&nbsp;|添加雷电流监测设备</a>
+					</div>
+					<div class="modal-body pad-0">
+						<table id="tb-info" class="xh-table table-hover">
+							<thead>
+								<tr class="tr-primary">
+									<!-- <th width="30px"><input type="checkbox"
+											id="table-checkbox" class="table-check" /></th> -->
+									<!-- <th>#</th> -->
+									<!-- spd -->
+									<th>雷电流在线监测仪ID</th>
+									<th>名称</th>
+									<th>型号</th>
+									<th>位置</th>
+									<th>阀值</th>
+									<th>预警阀值次数</th>
+									<th width="100px">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="i_isNULL==1">
+									<td colspan="17" class="text-center">没有查询到数据！</td>
+								</tr>
+								<tr ng-repeat="x in i_data">
+									<!-- spd -->
+									<td>{{x.deviceId}}</td>
+									<td>{{x.name}}</td>
+									<td>{{x.model}}</td>
+									<td>{{x.address}}</td>
+									<td>{{x.maxValues}}</td>
+									<td>{{x.maxNum}}</td>
+									<td><a class="text-success"
+										ng-click="showUpdateIWindow($index)" data-toggle="modal"
+										data-target="#i-window" ng-if="update_btn==1"> <i
+											class="fa fa-edit"></i>修改
+									</a> <span class="text-gray" ng-if="update_btn==0"> <i
+											class="fa fa-edit"></i>修改
+									</span> | <a class="text-danger" ng-click="del_i($index)"
+										ng-if="dele==1"> <i class="fa fa-trash"></i>删除
+									</a> <span class="text-gray" ng-if="dele==0"> <i
+											class="fa fa-trash"></i>删除
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer"></div>
+				</div>
+			</div>
+		</div>
+		<!-- 	雷电流管理 ---end -->
+		<!-- 	雷电流管理-->
+		<div class="modal fade" id="i-window" tabindex="2" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">雷电流在线监测管理</small>
+					</div>
+					<div class="modal-body" style="margin:2px;padding:2px;">
+						<form action="#" id="iForm" onSubmit="return false">
+							<div class="row" style="display:none">
+								<div class="form-group col-lg-6">
+									<label>站点ID</label> <input type="text" value=""
+										class="form-control" name="siteId" ng-model="siteIdVal">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-5">
+										<label>雷电流在线监测仪ID</label> <input type="text" value=""
+											class="form-control" name="i_deviceId" ng-model="i_deviceId"
+											ng-readonly="!add_btn">
+									</div>
+									<div class="form-group col-lg-7">
+										<label>型号</label> <input type="text" value=""
+											class="form-control" name="i_model" ng-model="i_model">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-5">
+										<label>名称</label> <input type="text" value=""
+											class="form-control" name="i_name" ng-model="i_name">
+									</div>
+									<div class="form-group col-lg-7">
+										<label>位置</label> <input type="text" value=""
+											class="form-control" name="i_address" ng-model="i_address">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-5">
+										<label>阀值</label> <input type="text" value=""
+											class="form-control" name="i_maxValues"
+											ng-model="i_maxValues">
+									</div>
+									<div class="form-group col-lg-7">
+										<label>预警阀值次数</label> <input type="text" value=""
+											class="form-control" name="i_maxNum" ng-model="i_maxNum">
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger btn-sm"
+							data-dismiss="modal">
+							<i class="fa fa-remove"></i>&nbsp;关闭
+						</button>
+						<button type="button" class="btn btn-success btn-sm"
+							id="i_add_btn" ng-show="add_btn">
+							<i class="fa fa-plus"></i>&nbsp;添加
+						</button>
+						<button type="button" class="btn btn-success btn-sm"
+							id="i_save_btn" ng-show="!add_btn">
+							<i class="fa fa-save"></i>&nbsp;保存
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 雷电流管理---end -->
+		<!-- 	地阻监测仪 -->
+		<div class="modal fade" id="site_r" tabindex="-1" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">地阻在线监测管理&nbsp;&nbsp;&nbsp;站点编号->{{siteIdVal}}</small>
+						<a href="#" style="margin-left:50px;color:blue"
+							data-toggle="modal" ng-click="Md(1)" data-target="#r-window"
+							ng-click="showAddRWindow()"><i class="fa fa-plus"></i>&nbsp;|添加地阻监测设备</a>
+					</div>
+					<div class="modal-body pad-0">
+						<table id="tb-info" class="xh-table table-hover">
+							<thead>
+								<tr class="tr-primary">
+									<!-- <th>#</th> -->
+									<!-- spd -->
+									<th>地阻在线监测仪ID</th>
+									<th>智能数字量采集器ID</th>
+									<th>名称</th>
+									<th>型号</th>
+									<th>位置</th>
+									<th>阀值</th>
+									<th>地阻监测点</th>
+									<th>地阻监测点名称</th>
+									<th width="100px">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-if="r_isNULL==1">
+									<td colspan="9" class="text-center">没有查询到数据！</td>
+								</tr>
+								<tr ng-repeat="x in r_data">
+									<!-- spd -->
+									<td>{{x.deviceId}}</td>
+									<td>{{x.md44id}}</td>
+									<td>{{x.name}}</td>
+									<td>{{x.type}}</td>
+									<td>{{x.address}}</td>
+									<td>{{x.maxValues}}</td>
+									<td>{{x.model}}</td>
+									<td>{{x.modelName}}</td>
+									<td><a class="text-success"
+										ng-click="showUpdateRWindow($index)" data-toggle="modal"
+										data-target="#r-window" ng-if="update_btn==1"> <i
+											class="fa fa-edit"></i>修改
+									</a> <span class="text-gray" ng-if="update_btn==0"> <i
+											class="fa fa-edit"></i>修改
+									</span> | <a class="text-danger" ng-click="del_r($index)"
+										ng-if="dele==1"> <i class="fa fa-trash"></i>删除
+									</a> <span class="text-gray" ng-if="dele==0"> <i
+											class="fa fa-trash"></i>删除
+									</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer"></div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- 	地阻监测仪管理 ---end -->
+		<!-- 	地阻监测仪管理-->
+		<div class="modal fade" id="r-window" tabindex="2" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">地阻在线监测管理</small>
+					</div>
+					<div class="modal-body" style="margin:2px;padding:2px;">
+						<form action="#" id="rForm" onSubmit="return false">
+							<input type="hidden" value="{{siteIdVal}}" class="form-control"
+								name="siteId" ng-model="siteIdVal">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-4">
+										<label>地阻在线监测仪ID</label> <input type="text" value=""
+											ng-model="rData.deviceId" class="form-control"
+											name="r_deviceId" ng-readonly="!add_btn" readonly="readonly">
+									</div>
+									<div class="form-group col-lg-4">
+										<label>智能数字量采集器ID</label> <input type="text" value=""
+											ng-model="rData.md44id" class="form-control" name="r_md44id">
+									</div>
+									<div class="form-group col-lg-4">
+										<label>名称</label> <input type="text" value=""
+											ng-model="rData.name" class="form-control" name="r_name">
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-4">
+										<label>型号</label> <input type="text" value=""
+											ng-model="rData.type" class="form-control" name="r_type">
+									</div>
+									<div class="form-group col-lg-4">
+										<label>位置</label> <input type="text" value=""
+											ng-model="rData.address" class="form-control"
+											name="r_address">
+									</div>
+									<div class="form-group col-lg-4">
+										<label>阀值</label> <input type="text" value=""
+											ng-model="rData.maxValues" class="form-control"
+											name="r_maxValues">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-4">
+										<label>地阻类型</label> <select onchange="xh.flagChange()"
+											 name="flag" class="form-control"
+											required="required">
+											<option value="0">接触式地阻</option>
+											<option value="1">非接触式地阻</option>
+										</select>
+									</div>
+									<div class="form-group col-lg-4 r-show r">
+										<label>R1</label> <input type="text" value=""
+											ng-model="rData.r1" class="form-control" name="r1">
+									</div>
+									<div class="form-group col-lg-4 r-show r">
+										<label>R2</label> <input type="text" value=""
+											ng-model="rData.r2" class="form-control" name="r2">
+									</div>
+
+								</div>
+							</div>
+							<hr />
+							&nbsp;&nbsp;<a class="font-bold">地阻监测点管理</a>
+							<p>
+							<p>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group col-lg-5">
+										<label>地阻监测点名称</label> <input type="text" value=""
+											ng-model="rData.modelName" class="form-control"
+											name="r_modelName">
+									</div>
+									<div class="form-group col-lg-7">
+										<label>地阻监测点</label> <input type="text" value=""
+											ng-model="rData.model" class="form-control" name="r_model">
+									</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger btn-sm"
+							data-dismiss="modal">
+							<i class="fa fa-remove"></i>&nbsp;关闭
+						</button>
+						<button type="button" class="btn btn-success btn-sm"
+							id="r_add_btn" ng-show="add_btn">
+							<i class="fa fa-plus"></i>&nbsp;添加
+						</button>
+						<button type="button" class="btn btn-success btn-sm"
+							id="r_save_btn" ng-show="!add_btn">
+							<i class="fa fa-save"></i>&nbsp;保存
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- 地阻监测仪---end -->
+	</div>
+	<!-- 添加站点 -->
+	<div ng-include="'site-add.html'"></div>
+	<div ng-include="'site-update.html'"></div>
+	<!-- 添加MD44模块 -->
+	<div ng-include="'site-add-md44.html'"></div>
+	<!-- 修改MD44模块 -->
+	<div ng-include="'site-update-md44.html'"></div>
+
+	<!-- Main Wrapper end -->
+	<!-- Footer-->
+	<footer class="footer" ng-include="'footer.html'"> </footer>
+	<div class="scroll-top text-info animated fadeIn top-hide">
+		<i class="fa fa-chevron-circle-up fa-3x"></i>
+	</div>
+	<script type="text/javascript" src="../controller/site.js"></script>
+	<script type="text/javascript">
+		xh.loadData();
+		$("#add_btn_ma").click(function() {
+			$("#addMachineForm").submit();
+		});
+
+		$("#spd_add_btn").click(function() {
+			$('#spd-add-form').submit();
+		});
+		$("#spd_save_btn").click(function() {
+			$('#spd-update-form').submit();
+		});
+		$("#i_add_btn").click(function() {
+			$('#iForm').submit();
+		});
+		$("#i_save_btn").click(function() {
+			$('#iForm').submit();
+		});
+		$("#r_add_btn").click(function() {
+			$('#rForm').submit();
+		});
+		$("#r_save_btn").click(function() {
+			$('#rForm').submit();
+		});
+		$("#spd_add_module_btn").click(function() {
+			$('#spd-add-module-form').submit();
+		});
+		$("#spd_save_module_btn").click(function() {
+			$('#spd-add-module-form').submit();
+		});
+
+		var faIcon = {
+			valid : 'fa fa-check-circle fa-lg text-success',
+			invalid : 'fa fa-times-circle fa-lg',
+			validating : 'fa fa-refresh'
+		};
+
+		$('#spd-add-form').bootstrapValidator({
+			excluded : [ ':disabled' ],
+			/* feedbackIcons: faIcon, */
+			fields : {
+				spd_deviceId : {
+					validators : {
+						notEmpty : {
+							message : '设备ID不能为空'
+						}
+					}
+				},
+				spd_name : {
+					validators : {
+						notEmpty : {
+							message : '名称不能为空'
+						}
+					}
+				},
+				spd_level : {
+					validators : {
+						notEmpty : {
+							message : '防护等级不能为空'
+						}
+					}
+				},
+				spd_model : {
+					validators : {
+						notEmpty : {
+							message : 'SPD路数不能为空'
+						}
+					}
+				},
+				spd_type : {
+					validators : {
+						notEmpty : {
+							message : '型号不能为空'
+						}
+					}
+				},
+				spd_address : {
+					validators : {
+						notEmpty : {
+							message : '地址不能为空'
+						}
+					}
+				}
+
+			}
+		}).on('success.form.bv', function(e, data) {
+			e.preventDefault();
+			var appElement = document.querySelector('[ng-controller=site]');
+			var $scope = angular.element(appElement).scope();
+			xh.add_spd();
+		});
+
+		$('#spd-update-form').bootstrapValidator({
+			excluded : [ ':disabled' ],
+			/* feedbackIcons: faIcon, */
+			fields : {
+				spd_deviceId : {
+					validators : {
+						notEmpty : {
+							message : '设备ID不能为空'
+						}
+					}
+				},
+				spd_name : {
+					validators : {
+						notEmpty : {
+							message : '名称不能为空'
+						}
+					}
+				},
+				spd_level : {
+					validators : {
+						notEmpty : {
+							message : '防护等级不能为空'
+						}
+					}
+				},
+				spd_model : {
+					validators : {
+						notEmpty : {
+							message : 'SPD路数不能为空'
+						}
+					}
+				},
+				spd_type : {
+					validators : {
+						notEmpty : {
+							message : '型号不能为空'
+						}
+					}
+				},
+				spd_address : {
+					validators : {
+						notEmpty : {
+							message : '地址不能为空'
+						}
+					}
+				}
+
+			}
+		}).on('success.form.bv', function(e, data) {
+			e.preventDefault();
+			var appElement = document.querySelector('[ng-controller=site]');
+			var $scope = angular.element(appElement).scope();
+
+			xh.update_spd();
+
+		});
+
+		$('#iForm').bootstrapValidator({
+			excluded : [ ':disabled' ],
+			/* feedbackIcons: faIcon, */
+			fields : {
+				i_deviceId : {
+					validators : {
+						notEmpty : {
+							message : '设备ID不能为空'
+						}
+					}
+				},
+				i_name : {
+					validators : {
+						notEmpty : {
+							message : '名称不能为空'
+						}
+					}
+				},
+				i_maxValues : {
+					validators : {
+						notEmpty : {
+							message : '阀值不能为空'
+						}
+					}
+				},
+				i_maxNum : {
+					validators : {
+						notEmpty : {
+							message : '预警阀值次数不能为空'
+						}
+					}
+				},
+				i_model : {
+					validators : {
+						notEmpty : {
+							message : '型号不能为空'
+						}
+					}
+				},
+				i_address : {
+					validators : {
+						notEmpty : {
+							message : '地址不能为空'
+						}
+					}
+				}
+
+			}
+		}).on('success.form.bv', function(e, data) {
+			e.preventDefault();
+			var appElement = document.querySelector('[ng-controller=site]');
+			var $scope = angular.element(appElement).scope();
+			if ($scope.add_btn) {
+				xh.add_i();
+			} else {
+				xh.update_i();
+
+			}
+
+		});
+
+		$('#rForm').bootstrapValidator({
+			excluded : [ ':disabled' ],
+			/* feedbackIcons: faIcon, */
+			fields : {
+				r_deviceId : {
+					validators : {
+						notEmpty : {
+							message : '设备ID不能为空'
+						}
+					}
+				},
+				r_name : {
+					validators : {
+						notEmpty : {
+							message : '名称不能为空'
+						}
+					}
+				},
+				/* 	r_model : {
+						validators : {
+							notEmpty : {
+								message : '监测点不能为空'
+							}
+						}
+					}, */
+				r_maxValues : {
+					validators : {
+						notEmpty : {
+							message : '阀值不能为空'
+						}
+					}
+				},
+				/* 	r_modelName : {
+						validators : {
+							notEmpty : {
+								message : '监测点名称不能为空'
+							}
+						}
+					}, */
+				r_type : {
+					validators : {
+						notEmpty : {
+							message : '型号不能为空'
+						}
+					}
+				},
+				r_address : {
+					validators : {
+						notEmpty : {
+							message : '地址不能为空'
+						}
+					}
+				}
+
+			}
+		}).on('success.form.bv', function(e, data) {
+			e.preventDefault();
+			var appElement = document.querySelector('[ng-controller=site]');
+			var $scope = angular.element(appElement).scope();
+			if ($scope.add_btn) {
+				xh.add_r();
+			} else {
+				xh.update_r();
+
+			}
+
+		});
+	</script>
+</body>
+</html>

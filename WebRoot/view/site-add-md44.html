@@ -1,0 +1,84 @@
+<!-- 添加MD44弹框 -->
+<div class="modal fade" id="md44-add-window" tabindex="2" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="color-line"></div>
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+				<small class="font-bold">智能数字量采集器管理</small>
+			</div>
+			<div class="modal-body" style="margin:2px;padding:2px;">
+				<form action="#" id="md44-add-form" onSubmit="return false">
+					<div class="row">
+						<input type="hidden" 
+									value="{{siteIdVal}}" class="form-control" name="siteId" ng-model="siteIdVal">
+						<div class="col-lg-6">
+							<div class="form-group col-lg-12">
+								<label>智能数字量采集器ID</label> <input type="text" value=""
+									class="form-control" name="md44_deviceId"
+									ng-model="md44_deviceId" required="required">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group col-lg-12">
+								<label>名称</label> <input type="text" value=""
+									class="form-control" name="md44_name">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group col-lg-12">
+								<label>型号</label> <input type="text" value=""
+									class="form-control" name="md44_type">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group col-lg-12">
+								<label>位置</label> <input type="text" value=""
+									class="form-control" name="md44_address">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-sm"
+					data-dismiss="modal">
+					<i class="fa fa-remove"></i>&nbsp;关闭
+				</button>
+				<button type="button" class="btn btn-success btn-sm"
+					id="md44_add_btn">
+					<i class="fa fa-plus"></i>&nbsp;添加
+				</button>
+
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$("#md44_add_btn").click(function() {
+	$('#md44-add-form').submit();
+});
+$('#md44-add-form').bootstrapValidator({
+	excluded : [ ':disabled' ],
+	fields : {
+		/* md44_deviceId : {
+			validators : {
+				notEmpty : {
+					message : '设备编号不能为空'
+				}
+			}
+		} */
+	}
+}).on('success.form.bv', function(e, data) {
+	e.preventDefault();
+	xh.add_md44();
+	/* var appElement = document.querySelector('[ng-controller=site]');
+	var $scope = angular.element(appElement).scope();
+	if ($scope.add_btn) {
+		xh.add_md44();
+	} */
+});
+
+</script>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>电磁防护智能监测与管理服务平台|业务管理</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript" src="../resources/js/xhbootstrap.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../resources/static/zTree_v3/css/zTreeStyle/zTreeStyle.css">
+<script type="text/javascript"
+	src="../resources/static/zTree_v3/js/jquery.ztree.core-3.5.js"></script>
+</head>
+<body class=" fixed-sidebar fixed-navbar fixed-footer" ng-app="app"
+	ng-controller="rtu">
+	<!-- Simple splash screen-->
+	<div class="splash">
+		<div class="color-line"></div>
+		<div class="splash-title">
+			<h1>系统正在努力加载中，请耐心等待</h1>
+			<div class="spinner">
+				<div class="rect1"></div>
+				<div class="rect2"></div>
+				<div class="rect3"></div>
+				<div class="rect4"></div>
+				<div class="rect5"></div>
+			</div>
+		</div>
+	</div>
+	<div ng-include="'top.html'"></div>
+	<!-- Navigation -->
+	<div ng-include="'bussiness-menu.html'"></div>
+	<!-- Navigation   end-->
+	<!-- Main Wrapper -->
+	<div id="wrapper">
+		<div class="content animate-panel">
+		<div class="row">
+		    <div class="col-md-12 " >
+		    <div class="panel green">
+		    <div class="panel-body">
+		    <p>地阻值获取：每次发起获取数据后，必须等待30s才会返回数据</p>
+		    
+		    </div>
+		    
+		    </div>
+		    
+		    </div>
+		    </div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hpanel">
+						<div class="panel-body">
+					<!-- 		<div class="row">
+							<div class="col-md-8">
+									<div class="form-group col-lg-12">
+										<label>设备类型</label>
+										<div class="radio">
+											<input id="type1" class="magic-radio" type="radio"
+												name="devicetype" value="0" checked="checked"> <label
+												for="type1">地阻测试仪器</label> <input id="type2"
+												class="magic-radio" type="radio" name="devicetype" value="1">
+											<label for="type2">雷电流在线监测仪</label>
+										</div>
+									</div>
+								</div>
+							</div> -->
+							<!-- row -->
+							<div class="row">
+							<div class="col-md-3">
+									<div class="input-group col-lg-18">
+										<span class="input-group-addon">站点编号：</span> <input
+											type="number" value="" id="siteId" class="form-control" name="siteId"
+											style="line-height:20px"> <span
+											class="input-group-btn">
+											<button class="btn btn-sm btn-default" type="button"
+												id="select-btn" data-toggle="dropdown">选择</button>
+										</span>
+									</div>
+									<ul id="tree" class="tree-dropdown-menu ztree"
+										style="width:auto; overflow:auto;"></ul>
+								</div>
+								<div class="col-md-3">
+									<div class="input-group col-lg-18">
+										<span class="input-group-addon">设备编号：</span> <input
+											type="text" value="" id="deviceId" class="form-control" name="deviceId"
+											style="line-height:20px"> <span
+											class="input-group-btn">
+											<button class="btn btn-sm btn-default" type="button"
+												id="r-select-btn" data-toggle="dropdown" disabled="disabled">选择</button>
+										</span>
+									</div>
+									<ul id="rTree" class="tree-dropdown-menu ztree"
+										style="width:auto; overflow:auto;"></ul>
+								</div>
+								<div class="col-md-3">
+									<div class="input-group col-lg-18">
+										<span class="input-group-addon"> &nbsp;&nbsp;检测点：</span> <input
+											type="text" value="" class="form-control" name="model"
+											style="line-height:20px"> <span
+											class="input-group-btn">
+											<button class="btn btn-sm btn-default" type="button"
+												id="model-select-btn" data-toggle="dropdown" disabled="disabled">选择</button>
+										</span>
+									</div>
+									<ul id="mTree" class="tree-dropdown-menu ztree"
+										style="width:auto; overflow:auto;" >
+										</ul>
+								</div>
+								
+								<div class="col-md-1">
+									<div class="form-group col-lg-18">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()" id="sendBtn">
+											<i class="fa fa-hand-pointer-o"></i>&nbsp;获取数据
+										</button>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<div class="hpanel">
+						<div class="panel-body">
+						<div class="row">
+								<div class="col-md-4">
+									<span>地阻测试值：</span>&nbsp;<span id="r-value"></span>
+								</div>
+								<div class="col-md-4">
+									
+								</div>
+								<!-- col -->
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- row -->
+		
+		</div>
+	</div>
+	<!-- Main Wrapper end -->
+	<!-- Footer-->
+	<footer class="footer" ng-include="'footer.html'"> </footer>
+	<div class="scroll-top text-info animated fadeIn top-hide">
+		<i class="fa fa-chevron-circle-up fa-3x"></i>
+	</div>
+	<script type="text/javascript" src="../controller/getData.js"></script>
+</body>
+</html>

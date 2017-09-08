@@ -1,0 +1,171 @@
+<!-- 	添加站点 -->
+		<div class="modal fade" id="add" tabindex="-1" role="dialog"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="color-line"></div>
+					<div class="modal-header ">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<small class="font-bold">添加站点</small>
+					</div>
+					<div class="modal-body pad-0" style="margin:2px;padding:2px;">
+						<form action="#" id="addSiteForm" onSubmit="return false">
+						
+							<div class="row">
+								<div class="col-lg-4">
+									<div class="form-group col-lg-12">
+										<label>站点ID</label> <input type="number" value=""
+											class="form-control" name="siteId" >
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group col-lg-12">
+										<label>站点名称</label> <input type="text" value=""
+											 name="name" class="form-control">
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group col-lg-12">
+										<label>行业</label> 
+										<!--  
+										<input type="text" value=""
+											class="form-control" name="trade" ng-model="trade">-->
+											<select ng-modal="selInstr" name="trade" class="form-control">
+												<option ng-repeat="x in in_data" value="{{x.trade}}">{{x.trade}}</option>
+											</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group col-lg-12">
+										<label>经度</label> <input type="text" value=""
+											class="form-control" name="lon" >
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group col-lg-12">
+										<label>纬度</label> <input type="text" value=""
+											class="form-control" name="lat" >
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-3">
+									<div class="form-group col-lg-12">
+										<label>省份</label> <select name="province" id="Province"
+											onChange="xh.getCity_p()" class="form-control"
+											>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="form-group col-lg-12">
+										<label>城市</label> <select name="city" id="City"
+											onChange="xh.getCounty_p()" class="form-control"
+											ng-model="city">
+											<!-- <option>北京</option> -->
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="form-group col-lg-12">
+										<label>区县</label> <select name="county" id="County"
+											class="form-control" >
+											<!-- <option>北京</option> -->
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="form-group col-lg-12">
+										<label>单位</label> <input type="text" value=""
+											class="form-control" name="company" >
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger btn-sm"
+							data-dismiss="modal">
+							<i class="fa fa-remove"></i>&nbsp;关闭
+						</button>
+						<button type="button" class="btn btn-success btn-sm" id="add_btn">
+							<i class="fa fa-plus"></i>&nbsp;添加
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+<script type="text/javascript">
+$("#add_btn").click(function() {
+	$('#addSiteForm').submit();
+});
+var faIcon = {
+		valid : 'fa fa-check-circle fa-lg text-success',
+		invalid : 'fa fa-times-circle fa-lg',
+		validating : 'fa fa-refresh'
+	};
+$('#addSiteForm').bootstrapValidator({
+	excluded : [ ':disabled' ],
+	/* feedbackIcons: faIcon, */
+	fields : {
+		siteId : {
+			validators : {
+				notEmpty : {
+					message : '站点编号不能为空'
+				}
+			}
+		},
+		lon : {
+			validators : {
+				notEmpty : {
+					message : '经度不能为空'
+				}
+			}
+		},
+		lat : {
+			validators : {
+				notEmpty : {
+					message : '纬度不能为空'
+				}
+			}
+		},
+		province : {
+			validators : {
+				notEmpty : {
+					message : '省份不能为空'
+				}
+			}
+		},
+		city : {
+			validators : {
+				notEmpty : {
+					message : '城市不能为空'
+				}
+			}
+		},
+		county : {
+			validators : {
+				notEmpty : {
+					message : '区县不能为空'
+				}
+			}
+		},
+		company : {
+			validators : {
+				notEmpty : {
+					message : '单位不能不能为空'
+				}
+			}
+		}
+
+	}
+}).on('success.form.bv', function(e, data) {
+	e.preventDefault();
+	xh.add();
+});
+</script>

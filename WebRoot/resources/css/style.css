@@ -1,0 +1,199 @@
+@CHARSET "UTF-8";
+/*bootstrap 样式文件*/
+@import "../static/bootstrap-3.3.6/css/bootstrap.min.css";
+/*字体图标样式文件*/
+@import "../fonts/Font-Awesome-master4.6.3/css/font-awesome.min.css";
+/* 网页布局 */
+@import "layout.css";
+/* 动画 */
+@import "animate.css";
+/* panel样式 */
+@import "panel.css";
+/*按钮样式文件*/
+@import "btn.css";
+/*表单样式文件*/
+@import "form.css";
+/* 字体样式文件 */
+@import "font.css";
+/* 左侧菜单 */
+@import "menu.css";
+/* checkbox */
+@import "magic-check.min.css";
+
+
+/*网页LOGO */
+
+#logo {
+	float: left;
+	width: 700px;
+	/* background-color: #34495e; */
+	/* padding: 4px 10px 8px 0px; */
+	height: 42px;
+	/* text-align: center; */
+}
+
+#logo span {
+	font-weight: 600;
+	color: DeepPink;
+	font-size: 14px;
+}
+.sidebar-collapse{
+	padding: 10px 0px 8px 12px;
+	border:1px solid #f2f2f2;
+	width:40px;
+	height:42px;
+	float: left;
+	cursor: pointer;
+}
+/* Sidebar Hide */
+body.hide-sidebar #menu {
+  margin-left: -180px;
+}
+body.hide-sidebar #wrapper {
+  margin-left: 0;
+}
+body.page-small #menu {
+  margin-left: -180px;
+}
+body.page-small #wrapper {
+  margin-left: 0;
+}
+body.page-small.show-sidebar #menu {
+  margin-left: 0;
+}
+body.page-small.show-sidebar #wrapper {
+  margin-left: 180px;
+}
+/* #logo.light-version {
+	background-color: #747e88 ;#8bc34a
+	border-bottom: 1px solid #202a2f; #8e8e8e
+}
+ */
+#logo.light-version ul li span {
+	font-weight: 600;
+	color: #fff;
+	font-size: 25px;
+}
+#logo.light-version ul {
+	list-style: none;
+}
+#logo.light-version ul li{
+	float: left;
+	margin-left:5px;
+
+}
+
+.small-logo {
+	padding-top:5px;
+	padding-left:3px;
+	margin-left: 0;
+	margin-top:0;
+	line-height:30px;
+	/*  display: block;
+  text-align: center;
+  padding-top: 18px;
+  font-size: 14px;
+  font-weight: 800; */
+}
+.small-logo .title{
+	padding-top:10px;
+}
+
+.profile-picture {
+	padding: 10px 10px;
+	text-align: center;
+	color:#fff;
+}
+.text-muted{
+	color:#fff;
+	font-weight: bold;
+}
+
+.stats-box div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.stats-label {
+	line-height: 1.2;
+}
+
+.stats-label small {
+	font-size: 80%;
+	line-height: 0.6;
+}
+
+.stats-box-value {
+	background: #ffffff;
+}
+
+.stats-box-detail {
+	background: #34495e;
+	color: #fff;
+	position: relative;
+}
+
+.navbar-form-custom {
+	float: left;
+	height: 52px;
+	navbar-nav padding: 0;
+	width: 180px;
+}
+
+.navbar-form-custom .form-control {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: medium none;
+	font-size: 13px;
+	height: 52px;
+	margin: 0;
+	z-index: 1060;
+	padding: 0;
+}
+
+.navbar-nav>li>a:hover,.navbar-nav>li>a:focus,.navbar-nav .open>a,.navbar-nav .open>a:hover,.navbar-nav .open>a:focus
+	{
+	color: inherit;
+	background: #f7f8fa;
+	border-bottom: 1px solid #e4e5e7;
+}
+
+/* 其他样式 */
+.no-borders {
+	border: none !important;
+}
+
+.m-t-xs {
+	margin-top: 5px;
+}
+
+.m-t-lg {
+	margin-top: 2px;
+}
+
+.transition {
+	transition: all 0.5s;
+}
+
+a {
+	cursor: pointer;
+	color: #34495e;
+}
+
+a:hover,a:focus {
+	color: #34495e;
+	text-decoration: none;
+}
+
+.back-link {
+	float: left;
+	width: 100%;
+	margin: 10px;
+}
+/* Opacity */
+.opacity-0 {
+	opacity: 0;
+}
+
+.opacity-1 {
+	opacity: 1;
+}

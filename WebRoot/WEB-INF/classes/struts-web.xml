@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+<constant name="struts.enable.DynamicMethodInvocation" value="true" />  
+<constant name="struts.i18n.encoding" value="utf-8"/>  
+
+<!--用户-->
+<package name="user" extends="json-default" namespace="/user">  
+  <action name="register" class="org.normal.action.User" method="register">  
+     <result type="json" name="success"></result>   
+   </action>   
+    <action name="login" class="org.normal.action.User" method="login">  
+     <result type="json" name="success"></result>   
+   </action>  
+     <action name="data" class="org.normal.action.User" method="user_data">  
+     <result type="json" name="success"></result>   
+   </action>  
+ <action name="data_group" class="org.normal.action.User" method="user_group_data">  
+     <result type="json" name="success"></result>   
+   </action>    
+ <action name="del" class="org.normal.action.User" method="del_user">  
+     <result type="json" name="success"></result>   
+   </action>    
+ <action name="lock" class="org.normal.action.User" method="addLock">  
+     <result type="json" name="success"></result>   
+   </action>  
+ <action name="unlock" class="org.normal.action.User" method="unLock">  
+     <result type="json" name="success"></result>   
+   </action>     
+ <action name="update" class="org.normal.action.User" method="update_user">  
+     <result type="json" name="success"></result>   
+   </action>
+ <action name="add" class="org.normal.action.User" method="add_user">  
+     <result type="json" name="success"></result>   
+   </action>   
+ <action name="loginuser" class="org.normal.action.User" method="LoginUser">  
+     <result type="json" name="success"></result>   
+   </action>     
+   
+ <action name="updatemyself" class="org.normal.action.User" method="update_myself">  
+     <result type="json" name="success"></result>   
+   </action>  
+ <action name="loginout" class="org.normal.action.User" method="LoginOut">  
+     <result type="json" name="success"></result>   
+   </action>  
+ <action name="userpower" class="org.normal.action.User" method="LoginUserPower">  
+     <result type="json" name="success"></result>   
+   </action>   
+  
+ <action name="alluserpower" class="org.normal.action.User" method="UserPower">  
+     <result type="json" name="success"></result>   
+   </action>   
+ <action name="userzone" class="org.normal.action.User" method="UserZone">  
+     <result type="json" name="success"></result>   
+   </action>     
+ <action name="savepower" class="org.normal.action.User" method="savePower">  
+     <result type="json" name="success"></result>   
+   </action>     
+</package>    
+
+
+<!--站点-->     
+<package name="site" extends="json-default" namespace="/site">
+<action name="data" class="org.normal.action.Site" method="data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="add" class="org.normal.action.Site" method="add_data">
+<result type="json" name="success"></result>
+</action>
+<action name="update" class="org.normal.action.Site" method="update_data">
+<result type="json" name="success"></result>
+</action>
+<action name="del" class="org.normal.action.Site" method="del_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="menu" class="org.normal.action.Site" method="menu">
+<result type="json" name="success"></result>
+</action>
+<action name="id_data" class="org.normal.action.Site" method="id_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="i_data" class="org.normal.action.Site" method="i_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="now_data" class="org.normal.action.Site" method="now_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="site_count" class="org.normal.action.Site" method="site_count">
+<result type="json" name="success"></result>
+</action>
+
+<action name="equipment_count" class="org.normal.action.Site" method="equipment_count">
+<result type="json" name="success"></result>
+</action>
+
+<action name="company" class="org.normal.action.Site" method="company">
+<result type="json" name="success"></result>
+</action>
+
+<action name="mapsite" class="org.normal.action.Site" method="mapSite">
+<result type="json" name="success"></result>
+</action>
+
+<action name="site_trade" class="org.normal.action.Site" method="site_trade">
+<result type="json" name="success"></result>
+</action>
+
+<action name="site_spd_data" class="org.normal.action.Site" method="site_spd_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="site_li_data" class="org.normal.action.Site" method="site_li_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="site_md44_data" class="org.normal.action.Site" method="site_md44_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="site_lr_data" class="org.normal.action.Site" method="site_lr_data">
+<result type="json" name="success"></result>
+</action>
+
+<action name="r_model" class="org.normal.action.Site" method="r_model">
+<result type="json" name="success"></result>
+</action>
+
+<action name="add_md44" class="org.normal.action.Site" method="add_md44">
+<result type="json" name="success"></result>
+</action>
+
+<action name="update_md44" class="org.normal.action.Site" method="update_md44">
+<result type="json" name="success"></result>
+</action>
+
+<action name="del_md44" class="org.normal.action.Site" method="del_md44">
+<result type="json" name="success"></result>
+</action>
+
+<action name="add_spd" class="org.normal.action.Site" method="add_spd">
+<result type="json" name="success"></result>
+</action>
+
+<action name="update_spd" class="org.normal.action.Site" method="update_spd">
+<result type="json" name="success"></result>
+</action>
+
+<action name="del_spd" class="org.normal.action.Site" method="del_spd">
+<result type="json" name="success"></result>
+</action>
+
+<action name="add_li" class="org.normal.action.Site" method="add_li">
+<result type="json" name="success"></result>
+</action>
+
+<action name="update_li" class="org.normal.action.Site" method="update_li">
+<result type="json" name="success"></result>
+</action>
+
+<action name="del_li" class="org.normal.action.Site" method="del_li">
+<result type="json" name="success"></result>
+</action>
+
+<action name="add_lr" class="org.normal.action.Site" method="add_lr">
+<result type="json" name="success"></result>
+</action>
+
+<action name="update_lr" class="org.normal.action.Site" method="update_lr">
+<result type="json" name="success"></result>
+</action>
+
+<action name="del_lr" class="org.normal.action.Site" method="del_lr">
+<result type="json" name="success"></result>
+</action>  
+
+
+<action name="now_data_i" class="org.normal.action.Site" method="now_data_i">
+<result type="json" name="success"></result>
+</action>  
+<action name="now_data_r" class="org.normal.action.Site" method="now_data_r">
+<result type="json" name="success"></result>
+</action> 
+<action name="now_data_spd" class="org.normal.action.Site" method="now_data_spd">
+<result type="json" name="success"></result>
+</action> 
+
+<action name="h_data_i" class="org.normal.action.Site" method="h_data_i">
+<result type="json" name="success"></result>
+</action>  
+<action name="h_data_r" class="org.normal.action.Site" method="h_data_r">
+<result type="json" name="success"></result>
+</action> 
+<action name="h_data_spd" class="org.normal.action.Site" method="h_data_spd">
+<result type="json" name="success"></result>
+</action> 
+
+<action name="r_chart" class="org.normal.action.Site" method="r_chart">
+<result type="json" name="success"></result>
+</action>
+<action name="r_tree" class="org.normal.action.Site" method="rTree">
+<result type="json" name="success"></result>
+</action> 
+<action name="ExcelToSite" class="org.normal.action.Site" method="ExcelToSite">
+<result type="json" name="success"></result>
+</action> 
+<action name="ExcelToDevices" class="org.normal.action.Site" method="ExcelToDevices">
+<result type="json" name="success"></result>
+</action> 
+
+<action name="DownExcel" class="org.normal.action.Site" method="DownExcel">
+<result type="json" name="success"></result>
+</action> 
+
+<action name="ExcelToI" class="org.normal.action.Site" method="ExcelToI">
+<result type="json" name="success"></result>
+</action> 
+<action name="ExcelToIh" class="org.normal.action.Site" method="ExcelToIh">
+<result type="json" name="success"></result>
+</action> 
+<action name="ExcelToR" class="org.normal.action.Site" method="ExcelToR">
+<result type="json" name="success"></result>
+</action>
+
+<action name="ExcelToRh" class="org.normal.action.Site" method="ExcelToRh">
+<result type="json" name="success"></result>
+</action> 
+
+<action name="ExcelToSpd" class="org.normal.action.Site" method="ExcelToSpd">
+<result type="json" name="success"></result>
+</action>  
+
+<action name="ExcelToSpdh" class="org.normal.action.Site" method="ExcelToSpdh">
+<result type="json" name="success"></result>
+</action>  
+
+
+
+
+<!-- <action name="spd_module" class="org.normal.action.Site" method="site_spd_module_data">
+<result type="json" name="success"></result>
+</action>  -->
+
+
+
+
+<!-- <action name="add_spd_module" class="org.normal.action.Site" method="add_spd_module">
+<result type="json" name="success"></result>
+</action> 
+<action name="update_spd_module" class="org.normal.action.Site" method="update_spd_module">
+<result type="json" name="success"></result>
+</action> 
+<action name="del_spd_module" class="org.normal.action.Site" method="del_spd_module">
+<result type="json" name="success"></result>
+</action>  -->
+<!-- 电阻检测点配置 -->
+<!-- <action name="lr_module" class="org.normal.action.Site" method="site_lr_module_data">
+<result type="json" name="success"></result>
+</action> -->
+
+
+<!-- <action name="add_lr_module" class="org.normal.action.Site" method="add_lr_module">
+<result type="json" name="success"></result>
+</action> 
+<action name="update_lr_module" class="org.normal.action.Site" method="update_lr_module">
+<result type="json" name="success"></result>
+</action> 
+<action name="del_lr_module" class="org.normal.action.Site" method="del_lr_module">
+<result type="json" name="success"></result>
+</action>  -->
+
+<action name="i_alarm_count" class="org.normal.action.Site" method="i_value_count">
+<result type="json" name="success"></result>
+</action>
+<action name="alarmSiteList" class="org.normal.action.Site" method="alarmSiteList">
+<result type="json" name="success"></result>
+</action>
+
+</package>   
+
+
+<!--RTU控制-->     
+<package name="rtu" extends="json-default" namespace="/rtu">
+<action name="rtu_data" class="org.normal.action.RtuController" method="data">
+<result type="json" name="success"></result>
+</action>
+
+</package>   
+
+<!--日志-->     
+<package name="log" extends="json-default" namespace="/log">
+<action name="data" class="org.normal.action.Log" method="log_data">
+<result type="json" name="success"></result>
+</action>
+<action name="del" class="org.normal.action.Log" method="del_log">
+<result type="json" name="success"></result>
+</action>
+
+</package>  
+
+<!--告警-->     
+<package name="alarm" extends="json-default" namespace="/alarm">
+<action name="spd_alarm" class="org.normal.action.Alarm" method="spd_alarm">
+<result type="json" name="success"></result>
+</action>
+<action name="r_alarm" class="org.normal.action.Alarm" method="r_alarm">
+<result type="json" name="success"></result>
+</action>
+<action name="i_alarm" class="org.normal.action.Alarm" method="i_alarm">
+<result type="json" name="success"></result>
+</action>
+
+<action name="surealarm" class="org.normal.action.Alarm" method="sureAlarm">
+<result type="json" name="success"></result>
+</action>
+
+<action name="count" class="org.normal.action.Alarm" method="count">
+<result type="json" name="success"></result>
+</action>
+
+</package>  
+
+<!--组-->
+<package name="group" extends="json-default" namespace="/group">
+<action name="data" class="org.normal.action.Group" method="data">
+<result type="json" name="success"></result>
+</action>
+<action name="add" class="org.normal.action.Group" method="add_data">
+<result type="json" name="success"></result>
+</action>
+<action name="update" class="org.normal.action.Group" method="update_data">
+<result type="json" name="success"></result>
+</action>
+<action name="del" class="org.normal.action.Group" method="del_data">
+<result type="json" name="success"></result>
+</action>
+
+
+</package>  
+<!--系统参数配置-->
+<package name="config" extends="json-default" namespace="/config">
+<action name="data" class="org.normal.action.Config" method="configData">
+<result type="json" name="success"></result>
+</action>
+
+<action name="update" class="org.normal.action.Config" method="updateConfig">
+<result type="json" name="success"></result>
+</action>
+
+</package> 
+
+<!--行政区域-->
+<package name="zone" extends="json-default" namespace="/zone">
+<action name="province" class="org.normal.action.AreaAction" method="province">
+<result type="json" name="success"></result>
+</action>
+
+<action name="city" class="org.normal.action.AreaAction" method="city">
+<result type="json" name="success"></result>
+</action>
+
+<action name="district" class="org.normal.action.AreaAction" method="district">
+<result type="json" name="success"></result>
+</action>
+
+</package> 
+         
+ <!-- Add packages here -->
+</struts>

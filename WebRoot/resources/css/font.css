@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+.text-info {
+  color: #3498db;
+}
+.text-success {
+  color: #62cb31;
+}
+.text-warning {
+  color: #ffb606;
+}
+.text-danger {
+  color: #e74c3c;
+}
+.text-white {
+  color: #fff;
+}
+.text-gray{
+	color:#ccc;
+}
+/* Fonts */
+.font-light {
+  font-weight: 300;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-bold {
+  font-weight: 600;
+}
+.font-extra-bold {
+  font-weight: 700;
+}
+.font-uppercase {
+  text-transform: uppercase;
+}
+.font-trans {
+  opacity: 0.5 !important;
+}
+.text-big {
+  font-size: 60px;
+}
+.fa-m{font-size: 25px;color:green;}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+.icon-big{font-size: 120px;}

@@ -1,0 +1,93 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<title>登录系统</title><script type="text/javascript" src="../resources/js/xhbootstrap.js"></script>
+	<script type="text/javascript" src="../controller/user.js"></script>
+
+<script type="text/javascript">
+	if (top.location !== self.location) {
+		top.location.href = location.href;
+	}
+	
+</script>
+
+<style type="text/css">
+html,body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url("../resources/images/img/main3.jpg") no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	position: absolute;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../resources/images/img/main3.jpg',
+		sizingMethod='scale');
+}
+</style>
+</head>
+<body>
+
+	<div class="login-container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center m-b-md" style="margin-bottom:40px;">
+					<h3>电磁防护智能监测与管理服务平台</h3>
+					<small>欢迎登录 ！</small>
+				</div>
+				
+						<form form action="#" id="loginForm" onSubmit="return false">
+							<div class="form-group">
+								<!-- <label class="control-label" for="username">用户名</label>  -->
+								<input type="text" placeholder="用户名"
+									title="请输入用户名" required="" value=""
+									name="username" id="username" class="form-control">
+								<!-- <span
+									class="help-block small">Your unique username to system</span> -->
+							</div>
+							<div class="form-group">
+								<!-- <label class="control-label" for="password">密&nbsp;&nbsp;码</label>  -->
+								<input type="password" title="请输入密码"
+									placeholder="******" required="" value="" name="password"
+									id="password" class="form-control">
+								<!-- <span
+									class="help-block small">Yur strong password</span> -->
+							</div>
+						
+
+							<button class="btn  btn-success btn-block" id="login-btn">登录</button>
+						</form>
+					
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center" style="margin-top:10px">
+				版本 V1.0 <strong>powered by</strong> 中航信虹
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$("#loginForm").submit(function(){
+		if($("input[name='username']").val()==""){
+			alert("用户名不能为空");
+			return ;
+		}
+		if($("input[name='password']").val()==""){
+			alert("密码不能为空");
+			return ;
+		}
+		xh.login();
+	});
+	</script>
+</body>
+</html>

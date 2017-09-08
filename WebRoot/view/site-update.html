@@ -1,0 +1,173 @@
+
+<div class="modal fade" id="update" tabindex="-1" role="dialog"
+	aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="color-line"></div>
+			<div class="modal-header ">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+				<small class="font-bold">修改站点信息</small>
+			</div>
+			<div class="modal-body" style="margin:2px;padding:2px;">
+				<form action="#" id="updateSiteForm" onSubmit="return false">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="col-lg-4">
+								<div class="form-group col-lg-12">
+									<label>站点ID</label> <input type="number" value=""
+										class="form-control" name="siteId" ng-model="siteId"
+										readonly="readonly">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group col-lg-12">
+									<label>站点名称</label> <input type="text" value=""
+										class="form-control" name="name" ng-model="name">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group col-lg-12">
+									<label>行业</label> <select ng-model="editData.trade" name="trade"
+										class="form-control">
+										<option ng-repeat="x in in_data" value="{{x.trade}}">{{x.trade}}</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group col-lg-12">
+								<label>经度</label> <input type="text" value=""
+									class="form-control" name="lon" ng-model="lon">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group col-lg-12">
+								<label>纬度</label> <input type="text" value=""
+									class="form-control" name="lat" ng-model="lat">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="form-group col-lg-12">
+								<label>省份</label> <select class="form-control" name="province"
+									ng-change="getCity()" ng-model="editData.provinceId" id="mSelProvince">
+									<option ng-repeat="x in provincesData" value="{{x.ID}}">{{x.Name}}</option>
+								</select>
+
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="form-group col-lg-12">
+								<label>城市</label> <select class="form-control" name="city"
+									id="mSelCity" ng-change="getCounty()" class="form-control"
+									ng-model="editData.cityId">
+									<option ng-repeat="x in cityData" value="{{x.ID}}">{{x.Name}}</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="form-group col-lg-12">
+								<label>区县</label> <select class="form-control" name="county"
+									id="mSelCounty" ng-model="editData.countyId" ng-change="getCompany()">
+									<option ng-repeat="x in countyData" value="{{x.ID}}">{{x.Name}}</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-lg-3">
+							<div class="form-group col-lg-12">
+								<label>单位</label> <input type="text" value=""
+									class="form-control" name="company" ng-model="editData.company">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-sm"
+					data-dismiss="modal">
+					<i class="fa fa-remove"></i>&nbsp;关闭
+				</button>
+				<button type="button" class="btn btn-primary btn-sm" id="save">
+					<i class="fa fa-save"></i>&nbsp;保存
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 修改用户---end -->
+
+
+<script type="text/javascript">
+	$("#save").click(function() {
+		$('#updateSiteForm').submit();
+	});
+	var faIcon = {
+		valid : 'fa fa-check-circle fa-lg text-success',
+		invalid : 'fa fa-times-circle fa-lg',
+		validating : 'fa fa-refresh'
+	};
+	$('#updateSiteForm').bootstrapValidator({
+		excluded : [ ':disabled' ],
+		/* feedbackIcons: faIcon, */
+		fields : {
+			siteId : {
+				validators : {
+					notEmpty : {
+						message : '站点编号不能为空'
+					}
+				}
+			},
+			lon : {
+				validators : {
+					notEmpty : {
+						message : '经度不能为空'
+					}
+				}
+			},
+			lat : {
+				validators : {
+					notEmpty : {
+						message : '纬度不能为空'
+					}
+				}
+			},
+			province : {
+				validators : {
+					notEmpty : {
+						message : '省份不能为空'
+					}
+				}
+			},
+			city : {
+				validators : {
+					notEmpty : {
+						message : '城市不能为空'
+					}
+				}
+			},
+			county : {
+				validators : {
+					notEmpty : {
+						message : '区县不能为空'
+					}
+				}
+			},
+			company : {
+				validators : {
+					notEmpty : {
+						message : '单位不能不能为空'
+					}
+				}
+			}
+
+		}
+	}).on('success.form.bv', function(e, data) {
+		e.preventDefault();
+		xh.update();
+	});
+</script>

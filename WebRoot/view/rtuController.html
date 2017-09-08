@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>电磁防护智能监测与管理服务平台|设备控制</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript" src="../resources/js/xhbootstrap.js"></script>
+</head>
+<body class=" fixed-sidebar fixed-navbar fixed-footer" ng-app="app"
+	ng-controller="rtu">
+	<!-- Simple splash screen-->
+	<div class="splash">
+		<div class="color-line"></div>
+		<div class="splash-title">
+			<h1>系统正在努力加载中，请耐心等待</h1>
+			<div class="spinner">
+				<div class="rect1"></div>
+				<div class="rect2"></div>
+				<div class="rect3"></div>
+				<div class="rect4"></div>
+				<div class="rect5"></div>
+			</div>
+		</div>
+	</div>
+	<div ng-include="'top.html'"></div>
+	<!-- Navigation -->
+	<div ng-include="'bussiness-menu.html'"></div>
+	<!-- Navigation   end-->
+	<!-- Main Wrapper -->
+	<div id="wrapper">
+		<div class="content animate-panel">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hpanel">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>设备类型</label>
+										<div class="radio">
+											<input id="type1" class="magic-radio" type="radio"
+												name="devicetype" value="0" checked="checked"> <label
+												for="type1">地阻测试仪器</label> <input id="type2"
+												class="magic-radio" type="radio" name="devicetype" value="1">
+											<label for="type2">雷电流在线监测仪</label>
+										</div>
+									</div>
+								</div>
+								<!-- col -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>读写数据</label>
+										<div class="radio">
+											<input id="func1" class="magic-radio" type="radio"
+												name="func" value="3" checked="checked"> <label
+												for="func1">读数据</label> <input id="func2"
+												class="magic-radio" type="radio" name="func" value="6">
+											<label for="func2">数据</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- row -->
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hpanel">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>地址码</label> <input type="text" value=""
+											class="form-control" name="deviceid">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-hand-pointer-o"></i>&nbsp;获取数据
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- panel-body -->
+					</div>
+				</div>
+			</div>
+			<!-- row -->
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hpanel">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>地址码</label> <input type="text" value=""
+											class="form-control" name="deviceid2">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;设置地址码
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div>
+							<hr>
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-2">
+									<div class="form-group col-lg-12">
+										<label>设备系统时间分</label> <input type="text" value=""
+											class="form-control" name="timeM">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-2">
+									<div class="form-group col-lg-12">
+										<label>设备系统时间秒</label> <input type="text" value=""
+											class="form-control" name="timeS">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;设置设备系统分秒
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div><hr>
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-2">
+									<div class="form-group col-lg-12">
+										<label>设备系统时间日</label> <input type="text" value=""
+											class="form-control" name="timeD">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-2">
+									<div class="form-group col-lg-12">
+										<label>设备系统时间时</label> <input type="text" value=""
+											class="form-control" name="timeH">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;设置设备系统日时
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div><hr>
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-2">
+									<div class="form-group col-lg-12">
+										<label>设备系统时间年</label> <input type="text" value=""
+											class="form-control" name="timeYear">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-2">
+									<div class="form-group col-lg-12">
+										<label>设备系统时间月</label> <input type="text" value=""
+											class="form-control" name="timeMonth">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;设置设备系统年月
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div><hr>
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>雷击记录数</label> <input type="text" value=""
+											class="form-control" name="i_total" placeholder="范围[0-500] 0：自动清除记录">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;设置雷击记录数
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div><hr>
+							<!-- row -->
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>雷击记录索引位置</label> <input type="text" value=""
+											class="form-control" name="i_index" placeholder="范围[0-500] 0：自动推送">
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;设置雷击记录索引位置
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div><hr>
+							<!-- row -->
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>设备参数复位</label>
+										<div class="radio">
+											<input id="databack1" class="magic-radio" type="radio"
+												name="databack" value="0" checked="checked"> <label
+												for="databack1">复位</label> <input id="databack2"
+												class="magic-radio" type="radio" name="databack" value="1">
+											<label for="databack2">不复位</label>
+										</div>
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;参数复位
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div><hr>
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>设备重启</label>
+										<div class="radio">
+											<input id="reboot1" class="magic-radio" type="radio"
+												name="reboot" value="1" checked="checked"> <label
+												for="reboot1">重启</label>
+												<input id="reboot2" class="magic-radio" type="radio"
+												name="reboot" value="1"> <label
+												for="reboot2">不重启</label> 
+										</div>
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;重启设备
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div><hr>
+							<!-- row -->
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<label>清除历史告警记录</label>
+										<div class="radio">
+											<input id="clearAlarm1" class="magic-radio" type="radio"
+												name="clearAlarm" value="1" checked="checked"> <label
+												for="clearAlarm1">清除</label>
+												<input id="clearAlarm2" class="magic-radio" type="radio"
+												name="clearAlarm" value="1"> <label
+												for="clearAlarm2">不清除</label> 
+										</div>
+									</div>
+								</div>
+								<!-- col-md -->
+								<div class="col-md-4">
+									<div class="form-group col-lg-12">
+										<button type="button" class="btn btn-danger btn-sm"
+											data-dismiss="modal" onclick="xh.start()"
+											style="margin-top:20px">
+											<i class="fa fa-cog"></i>&nbsp;清除历史告警记录
+										</button>
+									</div>
+								</div>
+								<!-- col-md -->
+							</div>
+							<!-- row -->
+							<div class="row"></div>
+							<!-- row -->
+							<div class="row"></div>
+							<!-- row -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Main Wrapper end -->
+	<!-- Footer-->
+	<footer class="footer" ng-include="'footer.html'"> </footer>
+	<div class="scroll-top text-info animated fadeIn top-hide">
+		<i class="fa fa-chevron-circle-up fa-3x"></i>
+	</div>
+	<script type="text/javascript" src="../controller/rtuController.js"></script>
+</body>
+</html>

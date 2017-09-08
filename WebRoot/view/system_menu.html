@@ -1,0 +1,18 @@
+<aside id="menu" >
+	<!-- <ul class="nav nav-list"> -->
+		
+	<ul class="menu-block">
+		<li ng-class="{true: 'menu-block-active', false: 'inactive'}[site_isActive]"><a href="site.html" target="_self"> <i class="fa fa-desktop fa-2x text-success"></i> <br><span>站点配置</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[user_isActive]"><a href="member.html" target="_self"> <i class="fa fa-user fa-2x text-success"></i><br><span>用户管理</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[group_isActive]"><a href="group.html" target="_self"> <i class="fa fa-user-secret fa-2x text-success"></i>
+				<br><span>用户组管理</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[config_isActive]"><a href="config.html" target="_self"> <i class="fa fa-cogs fa-2x text-success"></i>
+				<br><span>系统参数</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[log_isActive]"><a href="log.html" target="_self"> <i class="fa fa-file-text fa-2x text-success"></i><br><span> 日志记录</span>
+		</a></li>
+	</ul>
+</aside>

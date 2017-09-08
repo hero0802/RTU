@@ -1,0 +1,60 @@
+<!-- <aside id="litte-menu" >
+		
+	<ul class="menu-block">
+		<li ng-class="{true: 'menu-block-active', false: 'inactive'}[site_isActive]"><a href="site.html"> <i class="fa fa-desktop fa-2x"></i> <br><span>雷击电流</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[user_isActive]"><a href="member.html"> <i class="fa fa-user fa-2x"></i><br><span>接地电阻</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[group_isActive]"><a href="group.html"> <i class="fa fa-user-secret fa-2x"></i>
+				<br><span>SPD状态</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[config_isActive]"><a href="config.html"> <i class="fa fa-cogs fa-2x"></i>
+				<br><span>系统参数</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[log_isActive]"><a href="log.html"> <i class="fa fa-file-text fa-2x"></i><br><span> 站点数据</span>
+		</a></li>
+		<li  ng-class="{true: 'menu-block-active', false: 'inactive'}[log_isActive]"><a href="log.html"> <i class="fa fa-file-text fa-2x"></i><br><span>站点告警</span>
+		</a></li>
+	</ul>
+</aside> -->
+<aside id="menu">
+	<ul class="nav nav-list">
+	<li><a href="alarmSiteList.html"> <i
+					class="fa fa-exclamation-triangle text-danger "></i> 站点告警
+			</a></li>
+			<li><a href="#"> <i class="fa fa-bolt text-success"></i> 雷击电流
+			</a>
+				<ul class="nav-2">
+					<li
+						ng-class="{true: 'menu-data-active', false: 'inactive'}[i_now_isActive]"><a
+						href="data_i.html" target="_self"><i class="fa fa-sitemap"></i>&nbsp;实时数据</a></li>
+					<li><a href="data_i_h.html" target="_self"><i class="fa fa-sitemap"></i>&nbsp;历史记录</a></li>
+				</ul></li>
+			<li><a href="#"> <i class="fa fa-registered text-success" ></i> 接地电阻
+			</a>
+				<ul class="nav-2">
+					<li><a href="data_r.html" target="_self"><i class="fa fa-sitemap"></i>&nbsp;实时数据</a></li>
+					<li><a href="data_r_h.html" target="_self"><i class="fa fa-sitemap"></i>&nbsp;历史记录</a></li>
+					<li><a href="r_chart.html" target="_self"><i class="fa fa-sitemap"></i>&nbsp;图形分析</a></li>
+				</ul>
+			</li>
+			<li><a href="#"> <i class="fa fa-magnet text-success" ></i> SPD状态</a>
+				<ul class="nav=2">
+				<li><a href="data_spd.html" target="_self"> <i class="fa fa-sitemap"></i>实时数据</a></li>
+				<li><a href="data_spd_h.html" target="_self"> <i class="fa fa-sitemap"></i>历史数据</a></li>
+				</ul>
+			</li>
+			<!-- <li><a href="#"> <i class="fa fa-magnet"></i> SPD状态
+			</a>
+				<ul class="nav-2">
+					<li><a href="data_spd.html"><i class="fa fa-sitemap"></i>&nbsp;实时数据</a></li>
+					<li><a href="data_spd_h.html"><i class="fa fa-sitemap"></i>&nbsp;历史记录</a></li>
+				</ul></li> -->
+			<li><a href="siteattr.html" target="_self"> <i class="fa fa-server text-success"></i>
+					站点数据
+			</a></li>
+			<!-- <li><a href="siteMap.html"> <i class="fa fa-map"></i> 站点分布
+			</a></li> -->
+			
+		</ul>
+</aside>

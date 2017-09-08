@@ -1,0 +1,39 @@
+//包名
+package xh_rtu;
+option java_package = "com.normal.protobuf";
+option java_outer_classname = "XhRtu";
+
+//	上行心跳[RTU到中心]
+message HeartBeatIN
+{
+	required uint32	workstatus 			= 1;	//[0:正常  1：异常]
+	required uint32	rtuid 			    = 2;	//RTU ID
+}
+//	下行心跳[中心到RTU]
+message HeartBeatOUT
+{
+	required uint32	workstatus 			= 1;  	//当前RTU工作状态[0:正常  1：异常]
+}
+
+
+//	命令请求
+message CmdREQ
+{
+    required uint32			rtuid 	    = 1;	    //RTU ID
+	required uint32 		devicetype 	= 2;     	//设备类型  0:地阻测试仪器  1:雷电流在线监测仪
+	required uint32 		deviceid 	= 3;     	//modbus地址码;详细请参考具体协议文档
+	required uint32 		func 		= 4;    	//modbus功能码;详细请参考具体协议文档
+	required uint32 		addr 		= 5;     	//modbus读写地址;详细请参考具体协议文档
+	required uint32 		data 		= 6;     	//modbus读数据长度/写数据值;详细请参考具体协议文档
+}
+
+//	命令应答
+message CmdRES
+{
+    required uint32			rtuid 	    = 1;	    //RTU ID
+	required uint32 		devicetype 	= 2;     	//设备类型  0:地阻测试仪器  1:雷电流在线监测仪
+	required uint32 		deviceid 	= 3;     	//modbus地址码;详细请参考具体协议文档
+	required uint32 		func 		= 4;    	//modbus功能码;详细请参考具体协议文档
+	required uint32 		addr 		= 5;     	//modbus读写地址;详细请参考具体协议文档
+	optional bytes  	    content 	= 6;		//设备返回数据包
+}

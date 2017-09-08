@@ -1,0 +1,60 @@
+//包名
+package xh_rtu;
+option java_package = "com.normal.protobuf";
+option java_outer_classname = "XhRtu";
+
+
+//	上行心跳[RTU到中心]
+message HeartBeatIN
+{
+	required uint32	workstatus 			= 1;	//[0:正常  1：异常]
+	required uint32	rtuid 			    = 2;	//RTU ID
+}
+//	下行心跳[中心到RTU]
+message HeartBeatOUT
+{
+	required uint32	workstatus 			= 1;  	//当前RTU工作状态[0:正常  1：异常]
+}
+
+//	命令请求
+message CmdREQ
+{
+    required uint32	        rtuid 		= 1;	    //RTU ID
+	required uint32 		deviceid 	= 2;     	//
+	optional uint32 		md44id 		= 3;    	//md44
+	optional uint32 		modle 		= 4;    	//挂载通道
+	optional float 		    value		= 5;    	//获得的值  r,i
+	optional uint32 		status 		= 6;    	//spd状态
+	optional uint32 		type 		= 7;    	//0-i;1-i;2-spad
+}
+// 上下线状态请求 调度台->中心
+message OnOfflineREQ
+{
+	required int32			rtuid		= 1;		//RTU ID, -1为请求所有RTU上下线状态
+}
+
+// 上下线状态应答 中心->调度台[当RTU网络连接状态有变化时，主动推送到调度台]
+message OnOfflineRES
+{
+	message OnOffStatus
+	{
+		required int32		rtuid		= 1;		//RTU ID
+		required int32		status		= 2;		//状态: 0:下线， 1:在线
+	}
+	repeated OnOffStatus	rtustat		= 1;		//
+}
+//同步地阻测试周期
+message SynchronizeRTime
+{
+    required uint32	        time 		= 1;	    //测试周期  单位  【小时】
+}
+//同步雷电流在线检测仪测试周期
+message SynchronizeITime
+{
+    required uint32	        time 		= 1;	    //测试周期  单位  【秒】
+}
+//同步SPD检测仪测试周期
+message SynchronizeSpdTime
+{
+    required uint32	        time 		= 1;	    //测试周期  单位  【分钟】
+}

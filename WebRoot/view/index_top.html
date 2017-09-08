@@ -1,0 +1,103 @@
+
+<!--[if lt IE 9]>
+<p class="alert alert-danger" style="z-index:2000;text-align:center;">你的浏览器版本过低，请更新你的版本.建议使用IE9+版本，google，火狐等浏览器 </p>
+<![endif]-->
+<!-- Header -->
+<div id="header-top">
+	<!-- <div class="color-line"></div> -->
+	<div id="logo" class="light-version">
+		<ul class="small-logo">
+			<li><img alt="" src="resources/images/img/log.png"
+				height="50px" width="130px"></li>
+			<li class="title"><span>电磁防护智能监测与管理服务平台</span></li>
+		</ul>
+		
+	</div>
+	<div id="header">
+		<nav role="navigation">
+			<!-- <div class="sidebar-collapse hide-menu" id="" data-toggle="tooltip"
+				data-placement="right" title="收缩菜单栏">
+				<i class="fa fa-bars" data-icon1="fa fa-angle-double-left"
+					data-icon2="fa fa-angle-double-right"></i>
+			</div> -->
+			<ul class="navbar-left ">
+			    
+				<li class="header-active"><a href="index.html" target="_self"><i class="fa fa-map-marker"></i>&nbsp;|站点分布图</a></li>
+				<li><a href="view/getData.html" target="_self"><i class="fa fa-suitcase"></i>&nbsp;|业务管理</a></li>
+				<li><a href="view/alarmSiteList.html" target="_self"><i class="fa fa-database"></i>&nbsp;|数据分析</a></li>
+				<li><a href="view/site.html" target="_self"><i class="fa fa-cog"></i>&nbsp;|系统设置</a></li>
+			</ul>
+			<ul class="navbar-right">
+			<li style="color:#d15b47"><span>欢迎你!</span>&nbsp;&nbsp;<span id="login-user" name="AS"></span></li>
+							<li><a href="#" onclick="xh.fullScreen()"><i class="fa fa-desktop"></i>&nbsp;全屏显示</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#update_member" onclick="xh.user()"><i class="fa fa-edit"></i>&nbsp;|修改个人资料</a></li>
+				<li><a href="#" onclick="xh.LoginOut()"><i class="fa fa-hand-o-left"></i>&nbsp;|退出系统</a></li>
+			</ul>
+		</nav>
+	</div>
+	</div>
+	<!-- Header --end-->
+	
+				<div class="modal fade" id="update_member" tabindex="-1" role="dialog"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="color-line"></div>
+						<div class="modal-header ">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<small class="font-bold">修改个人资料</small>
+						</div>
+						<div class="modal-body">
+							<form action="#" id="updateMemberForm" onSubmit="return false">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group col-lg-12">
+											<label>用户名</label> <input type="text" value=""
+												class="form-control" name="username" ng-model="username"
+												readonly="readonly" id="login_username">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group col-lg-12">
+											<label>密&nbsp;码</label> <input type="text" value=""
+												placeholder="不修改可以为空" class="form-control" name="password"
+												ng-model="password" id="login_password">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group col-lg-12">
+											<label>邮箱</label> <input type="text" value=""
+												class="form-control" name="email" ng-model="email" id="login_email">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="form-group col-lg-12">
+											<label>电话</label> <input type="text" value=""
+												class="form-control" name="tel" ng-model="tel" id="login_texl">
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger btn-sm"
+								data-dismiss="modal">
+								<i class="fa fa-remove"></i>&nbsp;关闭
+							</button>
+							<button type="button" class="btn btn-primary btn-sm"
+								onclick="xh.saveUser()">
+								<i class="fa fa-save"></i>&nbsp;保存
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+			xh.loginUserInfo();
+			</script>
+	
