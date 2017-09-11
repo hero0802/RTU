@@ -122,7 +122,7 @@ public class SendData {
 
 		if (TcpClient.getSocket().isConnected()) {
 			out.write(info);
-			log.debug("获取RTU状态：send-->rtuId:" + rtuId);
+			log.debug("获取RTU状态：send-->["+TcpClient.getSocket().getInetAddress()+ "]rtuId:"+ rtuId);
 		}
 		return "OK";
 	}

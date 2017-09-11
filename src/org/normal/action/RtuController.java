@@ -61,7 +61,7 @@ public class RtuController extends ActionSupport {
 				Thread.sleep(28000);
 				String key=rtuStruct.getRtuId()+"-"+rtuStruct.getMd44id()+"-"+rtuStruct.getDeviceId()+"-"+rtuStruct.getModle();
 				
-				log.info("key="+key);
+				
 				value=TcpClient.getR_map().get(key);
 				if (value==-5) {
 					this.success=false;

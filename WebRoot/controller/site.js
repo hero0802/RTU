@@ -132,7 +132,7 @@ xh.loadData = function() {
 		};
 		$scope.flagChange=function(){
 			var flag=$("#rForm").find("select[name='flag']").val();
-			 if(flag==1){
+			 if(flag==0){
 				 $(".r").removeClass("r-show");
 			 }else{
 				 $(".r").addClass("r-show")
@@ -625,10 +625,10 @@ xh.loadData = function() {
 			
 			$("#rForm").find("select[name='flag']").val($scope.rData.flag);
 			var flag=$scope.rData.flag;
-			 if(flag==1){
+			 if(flag==0){
 				 $(".r").removeClass("r-show");
 			 }else{
-				 $(".r").addClass("r-show")
+				 $(".r").addClass("r-show");
 			 }
 			$scope.add_btn=false;
 		};

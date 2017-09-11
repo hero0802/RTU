@@ -318,7 +318,7 @@ public class TcpClient extends Thread {
 	public void OnOfflineRES(int len, byte[] buf) {
 		result = new byte[len - 26];
 		System.arraycopy(buf, 24, result, 0, len - 26);
-		// log.info(Arrays.toString(result));
+		log.info(fun.BytesToHexS(buf));
 		try {
 			XhRtu.OnOfflineRES res = XhRtu.OnOfflineRES.parseFrom(result);
 			log.info("==========[OnOfflineRES]=======");
@@ -389,204 +389,9 @@ public class TcpClient extends Thread {
 		}
 		System.out.println();
 
-		/*
-		 * try { XhRtu.CmdRES res = XhRtu.CmdRES.parseFrom(result);
-		 * log.info("[CmdRES]<--rtuId=" +
-		 * res.getRtuid()+"; deviceId="+res.getDeviceid()+";" +
-		 * " com="+res.getDevicetype()+"; func="+res.getFunc()+";" +
-		 * " addr="+res
-		 * .getAddr()+" ;content="+fun.BytesToHexS(res.getContent().toByteArray
-		 * ()));
-		 * 
-		 * if (res.getFunc() == 3) { int
-		 * index=res.getContent().toByteArray().length; int
-		 * com=res.getDevicetype(); switch (index) { case 30:
-		 * log.info("接收spd数据"); Spd_RES(res); break; case 4://10
-		 * log.info("接收地阻数据"); R_RES(res); break; case 12:
-		 * 
-		 * break; default: break; } if (com==100) { log.info("接收spd数据:GPIO");
-		 * log.info("IP:"+res.getContent().toStringUtf8()); Spd_GPIORES(res);
-		 * 
-		 * } } if (res.getFunc() == 6){
-		 * 
-		 * }
-		 * 
-		 * } catch (InvalidProtocolBufferException e) { // TODO Auto-generated
-		 * catch block e.printStackTrace(); }
-		 */
-
 	}
 
-	/*
-	 * // 命令应答 public void CmdRES(int len, byte[] buf) { result = new byte[len -
-	 * 26]; System.arraycopy(buf, 24, result, 0, len - 26); try { XhRtu.CmdRES
-	 * res = XhRtu.CmdRES.parseFrom(result); log.info("[CmdRES]<--rtuId=" +
-	 * res.getRtuid()+"; deviceId="+res.getDeviceid()+";" +
-	 * " com="+res.getDevicetype()+"; func="+res.getFunc()+";" +
-	 * " addr="+res.getAddr
-	 * ()+" ;content="+fun.BytesToHexS(res.getContent().toByteArray()));
-	 * 
-	 * if (res.getFunc() == 3) { int
-	 * index=res.getContent().toByteArray().length; int com=res.getDevicetype();
-	 * switch (index) { case 30: log.info("接收spd数据"); Spd_RES(res); break; case
-	 * 4://10 log.info("接收地阻数据"); R_RES(res); break; case 12:
-	 * 
-	 * break; default: break; } if (com==100) { log.info("接收spd数据:GPIO");
-	 * log.info("IP:"+res.getContent().toStringUtf8()); Spd_GPIORES(res);
-	 * 
-	 * } } if (res.getFunc() == 6){
-	 * 
-	 * }
-	 * 
-	 * } catch (InvalidProtocolBufferException e) { // TODO Auto-generated catch
-	 * block e.printStackTrace(); }
-	 * 
-	 * } // spd线检测仪接收收据 public void Spd_RES(XhRtu.CmdRES res) { byte[] a =
-	 * res.getContent().toByteArray();
-	 * 
-	 * int Do0=((a[0]&0xff) * 256 + a[1]&0xff); int Do1=((a[2]&0xff) * 256 +
-	 * a[3]&0xff); int Do2=((a[4]&0xff) * 256 + a[5]&0xff); int Do3=((a[6]&0xff)
-	 * * 256 + a[7]&0xff);
-	 * 
-	 * int I_Do0=((a[8]&0xff) * 256 + a[9]&0xff); int I_Do1=((a[10]&0xff) * 256
-	 * + a[11]&0xff); int I_Do2=((a[12]&0xff) * 256 + a[13]&0xff); int
-	 * I_Do3=((a[14]&0xff) * 256 + a[15]&0xff);
-	 * 
-	 * int DI0=((a[16]&0xff) * 256 + a[17]&0xff); int DI1=((a[18]&0xff) * 256 +
-	 * a[19]&0xff); int DI2=((a[20]&0xff) * 256 + a[21]&0xff); int
-	 * DI3=((a[22]&0xff) * 256 + a[23]&0xff); String alarmTime = fun.nowDate();
-	 * //log.info("[center]<--SPD: value=" + b7 + ":" + b8+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: Do0=" + Do0+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: Do1=" + Do1+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: Do2=" + Do2+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: Do3=" + Do3+"; time="+alarmTime);
-	 * 
-	 * log.info("[center]<--SPD: I_Do0=" + I_Do0+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: I_Do1=" + I_Do1+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: I_Do2=" + I_Do2+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: I_Do3=" + I_Do3+"; time="+alarmTime);
-	 * 
-	 * log.info("[center]<--SPD: DI0=" + DI0+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: DI1=" + DI1+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: DI2=" + DI2+"; time="+alarmTime);
-	 * log.info("[center]<--SPD: DI3=" + DI3+"; time="+alarmTime); String sql =
-	 * "select * from site_spd_module where spdId=" +
-	 * res.getDeviceid()+" and siteId="+res.getRtuid(); Connection conn =
-	 * mysql.getConn(); Statement stmt; try { stmt = conn.createStatement();
-	 * ResultSet rs = stmt.executeQuery(sql);
-	 * 
-	 * while (rs.next()) { String sql1 = null, sql2 = null; int DI=0; if
-	 * (rs.getInt("deviceId")==0) { DI=DI0; }else if(rs.getInt("deviceId")==1){
-	 * DI=DI1; }else if(rs.getInt("deviceId")==2){ DI=DI2; }else
-	 * if(rs.getInt("deviceId")==3){ DI=DI3; } sql1 =
-	 * "update site_spd_module set status='" + DI + "',time='" + alarmTime +
-	 * "' " + "where deviceId='" + rs.getInt("deviceId") + "' and siteId='" +
-	 * res.getRtuid() + "' and spdId='" + res.getDeviceid() + "'"; sql2 =
-	 * "insert into site_spd_h(siteId,spdId,deviceId,status,time)" + "values('"
-	 * + res.getRtuid() + "','" + res.getDeviceid() + "','" +
-	 * rs.getInt("deviceId") + "'," + "'" + DI + "','" + alarmTime + "')";
-	 * 
-	 * mysql.Update(sql1); mysql.Update(sql2); } stmt.close(); conn.close(); }
-	 * catch (SQLException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); }
-	 * 
-	 * }
-	 * 
-	 * public void Spd_GPIORES(XhRtu.CmdRES res) { int a =
-	 * Integer.parseInt(res.getContent().toStringUtf8()); String
-	 * b=fun.hex_10_2(a); log.info(b); int Do7=(Integer.parseInt(b.substring(0,
-	 * 1))); int Do6=(Integer.parseInt(b.substring(1, 2))); int
-	 * Do5=(Integer.parseInt(b.substring(2, 3))); int
-	 * Do4=(Integer.parseInt(b.substring(3, 4))); int
-	 * Do3=(Integer.parseInt(b.substring(4, 5))); int
-	 * Do2=(Integer.parseInt(b.substring(5, 6))); int
-	 * Do1=(Integer.parseInt(b.substring(6, 7))); int
-	 * Do0=(Integer.parseInt(b.substring(7, 8))); String alarmTime =
-	 * fun.nowDate(); log.info("[center]<--SPD: Do0=" +
-	 * Do0+"; time="+alarmTime); log.info("[center]<--SPD: Do1=" +
-	 * Do1+"; time="+alarmTime); log.info("[center]<--SPD: Do2=" +
-	 * Do2+"; time="+alarmTime); log.info("[center]<--SPD: Do3=" +
-	 * Do3+"; time="+alarmTime); log.info("[center]<--SPD: Do4=" +
-	 * Do4+"; time="+alarmTime); log.info("[center]<--SPD: Do5=" +
-	 * Do5+"; time="+alarmTime); log.info("[center]<--SPD: Do6=" +
-	 * Do6+"; time="+alarmTime); log.info("[center]<--SPD: Do7=" +
-	 * Do7+"; time="+alarmTime);
-	 * 
-	 * String sql = "select * from site_spd_module where spdId=" +
-	 * res.getDeviceid()+" and siteId="+res.getRtuid(); Connection conn =
-	 * mysql.getConn(); Statement stmt; try { stmt = conn.createStatement();
-	 * ResultSet rs = stmt.executeQuery(sql);
-	 * 
-	 * while (rs.next()) { String sql1 = null, sql2 = null; int DI=0; if
-	 * (rs.getInt("deviceId")==0) { DI=Do0; }else if(rs.getInt("deviceId")==1){
-	 * DI=Do1; }else if(rs.getInt("deviceId")==2){ DI=Do2; }else
-	 * if(rs.getInt("deviceId")==3){ DI=Do3; }else if(rs.getInt("deviceId")==4){
-	 * DI=Do4; }else if(rs.getInt("deviceId")==5){ DI=Do5; }else
-	 * if(rs.getInt("deviceId")==6){ DI=Do6; }else if(rs.getInt("deviceId")==7){
-	 * DI=Do7; } sql1 = "update site_spd_module set status='" + DI + "',time='"
-	 * + alarmTime + "' " + "where deviceId='" + rs.getInt("deviceId") +
-	 * "' and siteId='" + res.getRtuid() + "' and spdId='" + res.getDeviceid() +
-	 * "'"; sql2 = "insert into site_spd_h(siteId,spdId,deviceId,status,time)" +
-	 * "values('" + res.getRtuid() + "','" + res.getDeviceid() + "','" +
-	 * rs.getInt("deviceId") + "'," + "'" + DI + "','" + alarmTime + "')";
-	 * 
-	 * mysql.Update(sql1); mysql.Update(sql2); } stmt.close(); conn.close(); }
-	 * catch (SQLException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); } }
-	 * 
-	 * // 地阻在线检测仪接收收据 public void R_RES(XhRtu.CmdRES res) { byte[] a =
-	 * res.getContent().toByteArray();
-	 * 
-	 * 
-	 * System.out.println("a[0]="+a[0]); System.out.println("a[1]="+a[1]);
-	 * System.out.println("a[0]="+(a[0]&0xff)*256);
-	 * System.out.println("a[1]="+(a[1]&0xff)); int x=(a[0]&0xff)*256; int
-	 * y=a[1]&0xff; float r=x+y; int z_index=((a[2]&0xff)*256 + a[3]&0xff); for
-	 * (int i = 0; i < z_index; i++) { r=r/10; } r_value = r;
-	 * //device_map.put(res.getDeviceid(), r);
-	 * 
-	 * String alarmTime = fun.nowDate(); if(r==-1){
-	 * log.info("[center]<--:R: value='数据异常'; time="+alarmTime); }else {
-	 * log.info("[center]<--:R: value=" + r+"; time="+alarmTime); } String sql3
-	 * = "update site_lr set value='" + r + "',time='" + alarmTime +
-	 * "' where deviceId='" + res.getDeviceid() + "' and siteId='" +
-	 * res.getRtuid() + "'";
-	 * 
-	 * 
-	 * String sql_r =
-	 * "insert into site_lr_h(siteId,deviceId,value,time)VALUES('" +
-	 * res.getRtuid() + "','" + res.getDeviceid() + "'," + "'" + r + "','" +
-	 * alarmTime + "')"; if (r!=-1) {
-	 * r_map.put(String.valueOf(res.getRtuid())+String
-	 * .valueOf(res.getDeviceid()),r); mysql.Update(sql3); mysql.Update(sql_r);
-	 * }
-	 * 
-	 * 
-	 * if(b6<=12){ mysql.Update(sql3); //mysql.Update(sql4);
-	 * mysql.Update(sql_r); }
-	 * 
-	 * 
-	 * }
-	 * 
-	 * public float R_value(String str){ if (str.length()!=32) { return -1;
-	 * }else { String[] num = new String[32]; for (int i = 0; i < str.length();
-	 * i++) { num[i]=String.valueOf(str.charAt(i)); } int power=0,r1=0; float
-	 * r2=0,r=0; StringBuffer b_power=new StringBuffer(); StringBuffer b_r1=new
-	 * StringBuffer(); StringBuffer b_r2=new StringBuffer(); b_r1.append(1); for
-	 * (int i = 1; i <9; i++) { b_power.append(num[i]); }
-	 * power=fun.hex_2_10(b_power.toString())-127; if (power>0 && power<=23) {
-	 * for (int i = 9; i <9+power; i++) { b_r1.append(num[i]); } for (int i
-	 * =9+power; i < num.length; i++) { b_r2.append(num[i]); }
-	 * r1=fun.hex_2_10(b_r1.toString()); for (int i = 0; i <
-	 * b_r2.toString().length(); i++) {
-	 * r2+=fun.StringToInt(String.valueOf(b_r2.charAt(i)))*Math.pow(2, -(i+1));
-	 * } r=r1+r2; return r; }else { return -1; }
-	 * 
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
+	
 
 	// 取位数
 	public int byte_value(int value, int index) {
@@ -597,27 +402,7 @@ public class TcpClient extends Thread {
 		return (value >> index) & 0x01;
 	}
 
-	/*
-	 * // 雷电流检测仪状态数据 public void I_Status_RES(XhRtu.CmdRES res) { byte[] a =
-	 * res.getContent().toByteArray(); log.info("雷电流在线检测仪状态数据：length->" +
-	 * res.getContent().toByteArray().length); int b1 = a[0] * 100 + a[1]; //
-	 * 雷电流检测仪状态 int b2 = a[2];// 雷电流检测仪告警时间--分 int b3 = a[3];// 雷电流检测仪告警时间--秒
-	 * int b4 = a[4];// 雷电流检测仪告警时间--日 int b5 = a[5];// 雷电流检测仪告警时间--时 int b6 =
-	 * a[6];// 雷电流检测仪告警时间--年 int b7 = a[7];// 雷电流检测仪告警时间--月 int siteId =
-	 * res.getRtuid(); int deviceId = res.getDeviceid();
-	 * 
-	 * String alarmTime = String.valueOf(b6 + 20 * 100) + "-" + timeFormat(b7) +
-	 * "-" + timeFormat(b4); alarmTime += " " + timeFormat(b5) + ":" +
-	 * timeFormat(b2) + ":" + timeFormat(b3);
-	 * 
-	 * log.info("雷电流检测仪状态:" + b1); log.info("雷电流检测仪告警时间:" + alarmTime);
-	 * 
-	 * if(b6!=0){ String sql = "update site_li set status='" + b1 + "',time='" +
-	 * alarmTime + "' where siteId='" + siteId + "' and deviceId=" + deviceId;
-	 * mysql.Update(sql); }
-	 * 
-	 * }
-	 */
+	
 
 	public String timeFormat(int str) {
 		String a = "";
