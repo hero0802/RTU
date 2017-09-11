@@ -280,8 +280,8 @@ public class TcpClient extends Thread {
 			/*case 1:
 				HeartBeatOut(len, buf);
 				break;*/
-			case 2:
-				CmdREG(len, buf);
+			case 3:
+				CmdRES(len, buf);
 				break;
 			case 5:
 				OnOfflineRES(len, buf);
@@ -362,7 +362,7 @@ public class TcpClient extends Thread {
 	}
 
 	// 命令应答
-	public void CmdREG(int len, byte[] buf) {
+	public void CmdRES(int len, byte[] buf) {
 		result = new byte[len - 26];
 		System.arraycopy(buf, 24, result, 0, len - 26);
 		System.out.println(fun.BytesToHexS(result));

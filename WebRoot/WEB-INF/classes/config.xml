@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <WebDataBase>
-       <ip>127.0.0.1</ip>
+       <ip>182.61.10.202</ip>
        <port>3306</port>
        <root>root</root>
        <password>xinhong12345</password>
@@ -9,7 +9,7 @@
     </WebDataBase>
     
     <centerNet>
-       <center_ip>127.0.0.1</center_ip>
+       <center_ip>182.61.10.202</center_ip>
        <center_port>23006</center_port>
     </centerNet>
     

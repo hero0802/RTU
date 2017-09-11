@@ -30,61 +30,49 @@ public class SendData {
 		/* connection(); */
 		// ===============================protoco buf 数据
 
-		/*
-		 * required uint32 devicetype = 1; //设备类型 0:地阻测试仪器 1:雷电流在线监测仪 required
-		 * uint32 deviceid = 2; //modbus地址码;详细请参考具体协议文档 required uint32 func =
-		 * 3; //modbus功能码;详细请参考具体协议文档 required uint32 addr = 4;
-		 * //modbus读写地址;详细请参考具体协议文档 required uint32 data = 5;
-		 * //modbus读数据长度/写数据值;详细请参考具体协议文档
-		 */
-		/*
-		 * XhRtu.CmdREQ.Builder builder=XhRtu.CmdREQ.newBuilder();
-		 * builder.setRtuid(rtu.getRtuId());
-		 * builder.setDeviceid(rtu.getDeviceId());
-		 * builder.setMd44Id(rtu.getMd44id()); builder.setModle(rtu.getModle());
-		 * XhRtu.CmdREQ dsReq = builder.build(); byte[] buffer =
-		 * dsReq.toByteArray();
-		 */
+		  /* required uint32	        rtuid 		= 1;	    //RTU ID
+			required uint32 		deviceid 	= 2;     	//
+			optional uint32 		md44id 		= 3;    	//md44
+			optional uint32 		modle 		= 4;    	//挂载通道
+			optional float 		    value		= 5;    	//获得的值  r,i
+			optional uint32 		status 		= 6;    	//spd状态
+			optional uint32 		type 		= 7;    	//0-i;1-i;2-spad
+*/		
+		  XhRtu.CmdREQ.Builder builder=XhRtu.CmdREQ.newBuilder();
+		  builder.setRtuid(rtu.getRtuId());
+		  builder.setDeviceid(rtu.getDeviceId());
+		  builder.setMd44Id(rtu.getMd44id()); 
+		  builder.setModle(rtu.getModle());
+		  XhRtu.CmdREQ dsReq = builder.build(); 
+		  byte[] buffer =dsReq.toByteArray();
+		 
 
 		// ====================================
 		// 发送数据，应该获取Socket流中的输出流。
 		OutputStream out = TcpClient.getSocket().getOutputStream();
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
 		DataOutputStream dos = new DataOutputStream(bos);
-
-		dos.writeByte(9);
+		  
 		dos.writeShort(m_header.getCMDHeader()); // commandHeader 2 命令开始字段
-		dos.writeShort(rtu.getRtuId());
-		dos.writeByte(rtu.getDeviceId());
-		dos.writeByte(rtu.getType());
-		dos.writeByte(rtu.getModle());
-		dos.writeByte(rtu.getMd44id());
-		/*
-		 * dos.writeShort(m_header.getLength() + buffer.length);// length 2
-		 * 后接数据长度 dos.writeShort(2);// commandId 2 命令ID
-		 * dos.write(dd.LongData(m_header.getCallID(), 8));// businessSN 8 业务流水号
-		 * dos.writeShort(m_header.getSeqNum());
-		 */
+		dos.writeShort(m_header.getLength() + buffer.length);// length 2 后接数据长度
+		dos.writeShort(2);// commandId 2 命令ID
+		dos.write(dd.LongData(m_header.getCallID(), 8));// businessSN 8 业务流水号
+		dos.writeShort(m_header.getSeqNum());
 		// segNum 2 分片总数
-		/* dos.write(dd.LongData(m_header.getReserved(), 8)); */
+		dos.write(dd.LongData(m_header.getReserved(), 8));
 		/**************** content ***********************/
-		/* dos.write(buffer); */
+		dos.write(buffer);
 		/**************** content ***********************/
-		/* dos.writeShort(m_header.getCheckSum()); */
-
-		/* 08 05 10 04 18 00 20 00 */
-		/*
-		 * dos.writeShort(m_header.getCMDHeader()); dos.writeShort(1);
-		 */
+		dos.writeShort(m_header.getCheckSum());
 
 		byte[] info = bos.toByteArray();
 
 		if (TcpClient.getSocket().isConnected()) {
 			out.write(info);
-			System.out.println("->server:" + rtu.getRtuId() + ":"
+			log.info("->server:" + rtu.getRtuId() + ":"
 					+ rtu.getDeviceId() + ":" + rtu.getMd44id() + ":"
 					+ rtu.getModle());
-			System.out.println("->server:"
+			log.info("->server:"
 					+ TcpClient.getSocket().getInetAddress() + ":"
 					+ fun.BytesToHexS(info));
 

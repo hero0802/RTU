@@ -27,6 +27,17 @@ message CmdREQ
 	optional uint32 		status 		= 6;    	//spd状态
 	optional uint32 		type 		= 7;    	//0-i;1-i;2-spad
 }
+//	命令请求
+message CmdRES
+{
+    required uint32	        rtuid 		= 1;	    //RTU ID
+	required uint32 		deviceid 	= 2;     	//
+	optional uint32 		md44id 		= 3;    	//md44
+	optional uint32 		modle 		= 4;    	//挂载通道
+	optional float 		    value		= 5;    	//获得的值  r,i
+	optional uint32 		status 		= 6;    	//spd状态
+	optional uint32 		type 		= 7;    	//0-i;1-i;2-spad
+}
 // 上下线状态请求 调度台->中心
 message OnOfflineREQ
 {
