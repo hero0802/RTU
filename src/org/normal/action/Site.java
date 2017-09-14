@@ -352,9 +352,9 @@ public class Site extends ActionSupport {
 				Label label_4=new Label(3,0,"单位",fontFormat_h);
 				Label label_5=new Label(4,0,"站点ID",fontFormat_h);		
 				Label label_6=new Label(5,0,"站点名称",fontFormat_h);
-				Label label_7=new Label(6,0,"检测仪ID",fontFormat_h);
-				Label label_8=new Label(7,0,"检测仪名称",fontFormat_h);
-				Label label_9=new Label(8,0,"检测仪型号",fontFormat_h);
+				Label label_7=new Label(6,0,"监测仪ID",fontFormat_h);
+				Label label_8=new Label(7,0,"监测仪名称",fontFormat_h);
+				Label label_9=new Label(8,0,"监测仪型号",fontFormat_h);
 				Label label_10=new Label(9,0,"电流值",fontFormat_h);
 				Label label_11=new Label(10,0,"阈值",fontFormat_h);
 				Label label_12=new Label(11,0,"时间",fontFormat_h);
@@ -524,9 +524,9 @@ public class Site extends ActionSupport {
 					Label label_4=new Label(3,0,"单位",fontFormat_h);
 					Label label_5=new Label(4,0,"站点ID",fontFormat_h);		
 					Label label_6=new Label(5,0,"站点名称",fontFormat_h);
-					Label label_7=new Label(6,0,"检测仪ID",fontFormat_h);
-					Label label_8=new Label(7,0,"检测仪名称",fontFormat_h);
-					Label label_9=new Label(8,0,"检测仪型号",fontFormat_h);
+					Label label_7=new Label(6,0,"监测仪ID",fontFormat_h);
+					Label label_8=new Label(7,0,"监测仪名称",fontFormat_h);
+					Label label_9=new Label(8,0,"监测仪型号",fontFormat_h);
 					Label label_10=new Label(9,0,"电流值",fontFormat_h);
 					Label label_11=new Label(10,0,"阈值",fontFormat_h);
 					Label label_12=new Label(11,0,"时间",fontFormat_h);
@@ -695,12 +695,12 @@ public class Site extends ActionSupport {
 				Label label_4_r=new Label(3,0,"单位",fontFormat_h);
 				Label label_5_r=new Label(4,0,"站点ID",fontFormat_h);		
 				Label label_6_r=new Label(5,0,"站点名称",fontFormat_h);
-				Label label_7_r=new Label(6,0,"检测仪ID",fontFormat_h);
-				Label label_8_r=new Label(7,0,"检测仪名称",fontFormat_h);
-				Label label_9_r=new Label(8,0,"检测仪型号",fontFormat_h);
+				Label label_7_r=new Label(6,0,"监测仪ID",fontFormat_h);
+				Label label_8_r=new Label(7,0,"监测仪名称",fontFormat_h);
+				Label label_9_r=new Label(8,0,"监测仪型号",fontFormat_h);
 				Label label_10_r=new Label(9,0,"监测点",fontFormat_h);
-				Label label_11_r=new Label(10,0,"检测点名称",fontFormat_h);
-				Label label_12_r=new Label(11,0,"检测点值",fontFormat_h);
+				Label label_11_r=new Label(10,0,"监测点名称",fontFormat_h);
+				Label label_12_r=new Label(11,0,"监测点值",fontFormat_h);
 				Label label_13_r=new Label(12,0,"阈值",fontFormat_h);
 				Label label_14_r=new Label(13,0,"时间",fontFormat_h);
 				
@@ -880,12 +880,12 @@ public class Site extends ActionSupport {
 					Label label_4_r=new Label(3,0,"单位",fontFormat_h);
 					Label label_5_r=new Label(4,0,"站点ID",fontFormat_h);		
 					Label label_6_r=new Label(5,0,"站点名称",fontFormat_h);
-					Label label_7_r=new Label(6,0,"检测仪ID",fontFormat_h);
-					Label label_8_r=new Label(7,0,"检测仪名称",fontFormat_h);
-					Label label_9_r=new Label(8,0,"检测仪型号",fontFormat_h);
+					Label label_7_r=new Label(6,0,"监测仪ID",fontFormat_h);
+					Label label_8_r=new Label(7,0,"监测仪名称",fontFormat_h);
+					Label label_9_r=new Label(8,0,"监测仪型号",fontFormat_h);
 					Label label_10_r=new Label(9,0,"监测点",fontFormat_h);
-					Label label_11_r=new Label(10,0,"检测点名称",fontFormat_h);
-					Label label_12_r=new Label(11,0,"检测点值",fontFormat_h);
+					Label label_11_r=new Label(10,0,"监测点名称",fontFormat_h);
+					Label label_12_r=new Label(11,0,"监测点值",fontFormat_h);
 					Label label_13_r=new Label(12,0,"阈值",fontFormat_h);
 					Label label_14_r=new Label(13,0,"时间",fontFormat_h);
 					
@@ -1057,9 +1057,9 @@ public class Site extends ActionSupport {
 				Label label_4_s=new Label(3,0,"单位",fontFormat_h);
 				Label label_5_s=new Label(4,0,"站点ID",fontFormat_h);		
 				Label label_6_s=new Label(5,0,"站点名称",fontFormat_h);
-				Label label_7_s=new Label(6,0,"检测仪ID",fontFormat_h);
-				Label label_8_s=new Label(7,0,"检测仪名称",fontFormat_h);
-				Label label_9_s=new Label(8,0,"检测仪型号",fontFormat_h);
+				Label label_7_s=new Label(6,0,"监测仪ID",fontFormat_h);
+				Label label_8_s=new Label(7,0,"监测仪名称",fontFormat_h);
+				Label label_9_s=new Label(8,0,"监测仪型号",fontFormat_h);
 				Label label_10_s=new Label(9,0,"开关量",fontFormat_h);
 				Label label_11_s=new Label(10,0,"时间",fontFormat_h);
 				
@@ -1236,10 +1236,10 @@ public class Site extends ActionSupport {
 				Label label_4_s=new Label(3,0,"单位",fontFormat_h);
 				Label label_5_s=new Label(4,0,"站点ID",fontFormat_h);		
 				Label label_6_s=new Label(5,0,"站点名称",fontFormat_h);
-				Label label_7_s=new Label(6,0,"检测仪ID",fontFormat_h);
-				Label label_8_s=new Label(7,0,"检测仪名称",fontFormat_h);
-				Label label_9_s=new Label(8,0,"检测仪型号",fontFormat_h);
-				Label label_10_s=new Label(9,0,"开关量",fontFormat_h);
+				Label label_7_s=new Label(6,0,"监测仪ID",fontFormat_h);
+				Label label_8_s=new Label(7,0,"SPD名称",fontFormat_h);
+				Label label_9_s=new Label(8,0,"SPD型号",fontFormat_h);
+				Label label_10_s=new Label(9,0,"SPD路数",fontFormat_h);
 				Label label_11_s=new Label(10,0,"时间",fontFormat_h);
 				
 				sheet3.addCell(label_1_s);
@@ -1390,9 +1390,9 @@ public class Site extends ActionSupport {
 			Label label_4=new Label(3,0,"单位",fontFormat_h);
 			Label label_5=new Label(4,0,"站点ID",fontFormat_h);		
 			Label label_6=new Label(5,0,"站点名称",fontFormat_h);
-			Label label_7=new Label(6,0,"检测仪ID",fontFormat_h);
-			Label label_8=new Label(7,0,"检测仪名称",fontFormat_h);
-			Label label_9=new Label(8,0,"检测仪型号",fontFormat_h);
+			Label label_7=new Label(6,0,"监测仪ID",fontFormat_h);
+			Label label_8=new Label(7,0,"监测仪名称",fontFormat_h);
+			Label label_9=new Label(8,0,"监测仪型号",fontFormat_h);
 			Label label_10=new Label(9,0,"电流值",fontFormat_h);
 			Label label_11=new Label(10,0,"阈值",fontFormat_h);
 			Label label_12=new Label(11,0,"时间",fontFormat_h);
@@ -1404,12 +1404,12 @@ public class Site extends ActionSupport {
 			Label label_4_r=new Label(3,0,"单位",fontFormat_h);
 			Label label_5_r=new Label(4,0,"站点ID",fontFormat_h);		
 			Label label_6_r=new Label(5,0,"站点名称",fontFormat_h);
-			Label label_7_r=new Label(6,0,"检测仪ID",fontFormat_h);
-			Label label_8_r=new Label(7,0,"检测仪名称",fontFormat_h);
-			Label label_9_r=new Label(8,0,"检测仪型号",fontFormat_h);
+			Label label_7_r=new Label(6,0,"监测仪ID",fontFormat_h);
+			Label label_8_r=new Label(7,0,"监测仪名称",fontFormat_h);
+			Label label_9_r=new Label(8,0,"监测仪型号",fontFormat_h);
 			Label label_10_r=new Label(9,0,"监测点",fontFormat_h);
-			Label label_11_r=new Label(10,0,"检测点名称",fontFormat_h);
-			Label label_12_r=new Label(11,0,"检测点值",fontFormat_h);
+			Label label_11_r=new Label(10,0,"监测点名称",fontFormat_h);
+			Label label_12_r=new Label(11,0,"监测点值",fontFormat_h);
 			Label label_13_r=new Label(12,0,"阈值",fontFormat_h);
 			Label label_14_r=new Label(13,0,"时间",fontFormat_h);
 			
@@ -1420,10 +1420,10 @@ public class Site extends ActionSupport {
 			Label label_4_s=new Label(3,0,"单位",fontFormat_h);
 			Label label_5_s=new Label(4,0,"站点ID",fontFormat_h);		
 			Label label_6_s=new Label(5,0,"站点名称",fontFormat_h);
-			Label label_7_s=new Label(6,0,"检测仪ID",fontFormat_h);
-			Label label_8_s=new Label(7,0,"检测仪名称",fontFormat_h);
-			Label label_9_s=new Label(8,0,"检测仪型号",fontFormat_h);
-			Label label_10_s=new Label(9,0,"开关量",fontFormat_h);
+			Label label_7_s=new Label(6,0,"监测仪ID",fontFormat_h);
+			Label label_8_s=new Label(7,0,"SPD名称",fontFormat_h);
+			Label label_9_s=new Label(8,0,"SPD型号",fontFormat_h);
+			Label label_10_s=new Label(9,0,"SPD路数",fontFormat_h);
 			Label label_11_s=new Label(10,0,"时间",fontFormat_h);
 			
 
@@ -1934,7 +1934,10 @@ public class Site extends ActionSupport {
 	public String del_spd() {
 		String sql = "delete from site_spd where deviceId='" + spd_deviceId
 				+ "' and siteId='" + siteId + "'and model='" + spd_model + "'";
+		String sql2="delete from site_spd_h where deviceId='" + spd_deviceId
+				+ "' and siteId='" + siteId + "'and model='" + spd_model + "'";
 		mysql.Update(sql);
+		mysql.Update(sql2);
 		this.success = true;
 		this.message = "删除spd成功";
 		mysql.writeLog(3, "删除spd" + spd_deviceId, fun.getSession("username"));
@@ -1992,7 +1995,10 @@ public class Site extends ActionSupport {
 	public String del_li() {
 		String sql = "delete from site_li where deviceId='" + i_deviceId
 				+ "' and siteId=" + siteId;
+		String sql2 = "delete from site_li_h where deviceId='" + i_deviceId
+				+ "' and siteId=" + siteId;
 		mysql.Update(sql);
+		mysql.Update(sql2);
 		this.success = true;
 		this.message = "删除雷电流检测仪成功";
 		// RtuIListenner.getM_ilist().clear();
@@ -2119,7 +2125,10 @@ public class Site extends ActionSupport {
 		String sql = "delete from site_lr where deviceId='" + r_deviceId
 				+ "' and siteId='" + siteId + "'and md44id='" + r_md44id
 				+ "'and model='" + r_model + "'";
+		String sql2 = "delete from site_lr_h where deviceId='" + r_deviceId
+				+ "' and siteId='" + siteId + "'and model='" + r_model + "'";
 		mysql.Update(sql);
+		mysql.Update(sql2);
 		this.success = true;
 		this.message = "删除地阻检测仪成功";
 
@@ -2150,8 +2159,22 @@ public class Site extends ActionSupport {
 
 	// 删除站点
 	public String del_data() {
-		String sql = "delete from site where id in (" + deleteids + ")";
+		String sql = "delete from site where siteId in (" + deleteids + ")";
+		String sql2 = "delete from site_li where siteId in (" + deleteids + ")";
+		String sql3 = "delete from site_lr where siteId in (" + deleteids + ")";
+		String sql4 = "delete from site_spd where siteId in (" + deleteids + ")";
+		String sql5 = "delete from site_li_h where siteId in (" + deleteids + ")";
+		String sql6 = "delete from site_lr_h where siteId in (" + deleteids + ")";
+		String sql7 = "delete from site_spd_h where siteId in (" + deleteids + ")";
+		String sql8 = "delete from md44 where siteId in (" + deleteids + ")";
 		mysql.Update(sql);
+		mysql.Update(sql2);
+		mysql.Update(sql3);
+		mysql.Update(sql4);
+		mysql.Update(sql5);
+		mysql.Update(sql6);
+		mysql.Update(sql7);
+		mysql.Update(sql8);
 		this.success = true;
 		this.message = "删除站点成功";
 		/*

@@ -273,7 +273,7 @@ public class TcpClient extends Thread {
 
 	public void handler(int comId, int len, String callid, byte[] buf,
 			int length) throws Exception {
-		log.info("comId==" + comId);
+		
 		/*log.info(fun.BytesToHexS(buf));*/
 		try {
 			switch (comId) {
@@ -318,7 +318,7 @@ public class TcpClient extends Thread {
 	public void OnOfflineRES(int len, byte[] buf) {
 		result = new byte[len - 26];
 		System.arraycopy(buf, 24, result, 0, len - 26);
-		log.info(fun.BytesToHexS(buf));
+		
 		try {
 			XhRtu.OnOfflineRES res = XhRtu.OnOfflineRES.parseFrom(result);
 			log.info("==========[OnOfflineRES]=======");
@@ -366,6 +366,7 @@ public class TcpClient extends Thread {
 		result = new byte[len - 26];
 		System.arraycopy(buf, 24, result, 0, len - 26);
 		System.out.println(fun.BytesToHexS(result));
+		
 		try {
 			XhRtu.CmdREQ res = XhRtu.CmdREQ.parseFrom(result);
 			int rtuId = res.getRtuid();

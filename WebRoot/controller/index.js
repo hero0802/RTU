@@ -290,6 +290,8 @@ function rtu_status(str) {
 			  xh.CreatMaker9(record, icon, labelClass);
 		}
 	}
+	xh.loadBar(); 
+	xh.loadPie();
 	
 
 }
@@ -348,6 +350,7 @@ xh.markerClick = function(data) {
 
 }
 // 图标
+
 xh.loadPie = function() {
 	require([ 'echarts', 'echarts/chart/pie' ],
 			function(ec) {

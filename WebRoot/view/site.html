@@ -186,7 +186,7 @@
 											ng-if="update_btn==1"> <i class="fa fa-edit"></i>修改
 										</a> <span class="text-gray" ng-if="update_btn==0"> <i
 												class="fa fa-edit"></i>修改
-										</span> | <a class="text-danger" ng-click="del(x.id)" ng-if="dele==1">
+										</span> | <a class="text-danger" ng-click="del(x.siteId)" ng-if="dele==1">
 												<i class="fa fa-trash"></i>删除
 										</a> <span class="text-gray" ng-if="dele==0"> <i
 												class="fa fa-trash"></i>删除
@@ -795,7 +795,7 @@
 									</div>
 									<div class="form-group col-lg-4">
 										<label>智能数字量采集器ID</label> <input type="text" value=""
-											ng-model="rData.md44id" class="form-control" name="r_md44id">
+											ng-model="rData.md44id" class="form-control" name="r_md44id" ng-readonly="!add_btn">
 									</div>
 									<div class="form-group col-lg-4">
 										<label>名称</label> <input type="text" value=""
@@ -856,7 +856,7 @@
 									</div>
 									<div class="form-group col-lg-7">
 										<label>地阻监测点</label> <input type="text" value=""
-											ng-model="rData.model" class="form-control" name="r_model">
+											ng-model="rData.model" class="form-control" ng-readonly="!add_btn" name="r_model">
 									</div>
 								</div>
 							</div>

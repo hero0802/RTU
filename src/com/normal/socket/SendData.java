@@ -43,6 +43,7 @@ public class SendData {
 		  builder.setDeviceid(rtu.getDeviceId());
 		  builder.setMd44Id(rtu.getMd44id()); 
 		  builder.setModle(rtu.getModle());
+		  builder.setType(1);
 		  XhRtu.CmdREQ dsReq = builder.build(); 
 		  byte[] buffer =dsReq.toByteArray();
 		 
@@ -116,7 +117,7 @@ public class SendData {
 	}
 
 	// 同步地阻测试周期
-	public static  String SynchronizeRTime(int time) throws IOException {
+	public static  String SynchronizeRTime(float time) throws IOException {
 		// 创建客户端的Socket服务，指定目的主机和端口。
 		NetDataTypeTransform dd = new NetDataTypeTransform();
 		XhRtu.SynchronizeRTime.Builder builder = XhRtu.SynchronizeRTime
@@ -151,7 +152,7 @@ public class SendData {
 		return "OK";
 	}
 	// 同步雷电流在线检测仪测试周期 
-	public static String SynchronizeITime(int time) throws IOException {
+	public static String SynchronizeITime(float time) throws IOException {
 		// 创建客户端的Socket服务，指定目的主机和端口。
 		NetDataTypeTransform dd = new NetDataTypeTransform();
 		XhRtu.SynchronizeITime.Builder builder = XhRtu.SynchronizeITime
@@ -186,7 +187,7 @@ public class SendData {
 		return "OK";
 	}
 	// 同步SPD检测仪测试周期
-	public static String SynchronizeSpdTime(int time) throws IOException {
+	public static String SynchronizeSpdTime(float time) throws IOException {
 		// 创建客户端的Socket服务，指定目的主机和端口。
 		NetDataTypeTransform dd = new NetDataTypeTransform();
 		XhRtu.SynchronizeSpdTime.Builder builder = XhRtu.SynchronizeSpdTime

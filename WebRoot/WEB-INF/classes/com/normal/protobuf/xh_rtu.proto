@@ -57,15 +57,15 @@ message OnOfflineRES
 //同步地阻测试周期
 message SynchronizeRTime
 {
-    required uint32	        time 		= 1;	    //测试周期  单位  【小时】
+    required float	        time 		= 1;	    //测试周期  单位  【小时】
 }
 //同步雷电流在线检测仪测试周期
 message SynchronizeITime
 {
-    required uint32	        time 		= 1;	    //测试周期  单位  【秒】
+    required float	        time 		= 1;	    //测试周期  单位  【秒】
 }
 //同步SPD检测仪测试周期
 message SynchronizeSpdTime
 {
-    required uint32	        time 		= 1;	    //测试周期  单位  【分钟】
+    required float        time 		= 1;	    //测试周期  单位  【分钟】
 }

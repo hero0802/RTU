@@ -17,18 +17,18 @@ public class Config extends ActionSupport {
 	private String ip;
 	private int port;
 	
-	private int r_time;
-	private int i_time;
-	private int spd_time;
+	private float r_time;
+	private float i_time;
+	private float spd_time;
 	private Func fun = new Func();
 	private JSON json=new JSON();
 	private String xmlPath = Config.class.getResource("/config.xml").getPath();
 	
 	
 	public String configData(){
-		i_time=Integer.parseInt(fun.readXml("System", "i_time"));
-		r_time=Integer.parseInt(fun.readXml("System", "r_time"));
-		spd_time=Integer.parseInt(fun.readXml("System", "spd_time"));
+		i_time=Float.parseFloat(fun.readXml("System", "i_time"));
+		r_time=Float.parseFloat(fun.readXml("System", "r_time"));
+		spd_time=Float.parseFloat(fun.readXml("System", "spd_time"));
 	/*	ip=fun.readXml("centerNet","center_ip");
 		port=Integer.parseInt(fun.readXml("centerNet","center_port"));*/
 
@@ -39,9 +39,9 @@ public class Config extends ActionSupport {
 	public String updateConfig(){
 		try {
 			
-			int i=Integer.parseInt(fun.readXml("System", "i_time"));
-			int r=Integer.parseInt(fun.readXml("System", "r_time"));
-			int spd=Integer.parseInt(fun.readXml("System", "spd_time"));
+			float i=Float.parseFloat(fun.readXml("System", "i_time"));
+			float r=Float.parseFloat(fun.readXml("System", "r_time"));
+			float spd=Float.parseFloat(fun.readXml("System", "spd_time"));
 			if(TcpClient.getSocket().isConnected()){
 				if(i!=i_time){
 					fun.updateXML(xmlPath, "System", "i_time",String.valueOf(i_time));
@@ -116,24 +116,25 @@ public class Config extends ActionSupport {
 	public void setPort(int port) {
 		this.port = port;
 	}
-	public int getR_time() {
+	public float getR_time() {
 		return r_time;
 	}
-	public void setR_time(int r_time) {
+	public void setR_time(float r_time) {
 		this.r_time = r_time;
 	}
-	public int getI_time() {
+	public float getI_time() {
 		return i_time;
 	}
-	public void setI_time(int i_time) {
+	public void setI_time(float i_time) {
 		this.i_time = i_time;
 	}
-	public int getSpd_time() {
+	public float getSpd_time() {
 		return spd_time;
 	}
-	public void setSpd_time(int spd_time) {
+	public void setSpd_time(float spd_time) {
 		this.spd_time = spd_time;
 	}
+	
 	
 	
 

@@ -1461,6 +1461,702 @@ public final class XhRtu {
     // @@protoc_insertion_point(class_scope:xh_rtu.CmdREQ)
   }
   
+  public interface CmdRESOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required uint32 rtuid = 1;
+    boolean hasRtuid();
+    int getRtuid();
+    
+    // required uint32 deviceid = 2;
+    boolean hasDeviceid();
+    int getDeviceid();
+    
+    // optional uint32 md44id = 3;
+    boolean hasMd44Id();
+    int getMd44Id();
+    
+    // optional uint32 modle = 4;
+    boolean hasModle();
+    int getModle();
+    
+    // optional float value = 5;
+    boolean hasValue();
+    float getValue();
+    
+    // optional uint32 status = 6;
+    boolean hasStatus();
+    int getStatus();
+    
+    // optional uint32 type = 7;
+    boolean hasType();
+    int getType();
+  }
+  public static final class CmdRES extends
+      com.google.protobuf.GeneratedMessage
+      implements CmdRESOrBuilder {
+    // Use CmdRES.newBuilder() to construct.
+    private CmdRES(Builder builder) {
+      super(builder);
+    }
+    private CmdRES(boolean noInit) {}
+    
+    private static final CmdRES defaultInstance;
+    public static CmdRES getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public CmdRES getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.normal.protobuf.XhRtu.internal_static_xh_rtu_CmdRES_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.normal.protobuf.XhRtu.internal_static_xh_rtu_CmdRES_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required uint32 rtuid = 1;
+    public static final int RTUID_FIELD_NUMBER = 1;
+    private int rtuid_;
+    public boolean hasRtuid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getRtuid() {
+      return rtuid_;
+    }
+    
+    // required uint32 deviceid = 2;
+    public static final int DEVICEID_FIELD_NUMBER = 2;
+    private int deviceid_;
+    public boolean hasDeviceid() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getDeviceid() {
+      return deviceid_;
+    }
+    
+    // optional uint32 md44id = 3;
+    public static final int MD44ID_FIELD_NUMBER = 3;
+    private int md44Id_;
+    public boolean hasMd44Id() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public int getMd44Id() {
+      return md44Id_;
+    }
+    
+    // optional uint32 modle = 4;
+    public static final int MODLE_FIELD_NUMBER = 4;
+    private int modle_;
+    public boolean hasModle() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public int getModle() {
+      return modle_;
+    }
+    
+    // optional float value = 5;
+    public static final int VALUE_FIELD_NUMBER = 5;
+    private float value_;
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public float getValue() {
+      return value_;
+    }
+    
+    // optional uint32 status = 6;
+    public static final int STATUS_FIELD_NUMBER = 6;
+    private int status_;
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public int getStatus() {
+      return status_;
+    }
+    
+    // optional uint32 type = 7;
+    public static final int TYPE_FIELD_NUMBER = 7;
+    private int type_;
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public int getType() {
+      return type_;
+    }
+    
+    private void initFields() {
+      rtuid_ = 0;
+      deviceid_ = 0;
+      md44Id_ = 0;
+      modle_ = 0;
+      value_ = 0F;
+      status_ = 0;
+      type_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasRtuid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasDeviceid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, rtuid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, deviceid_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, md44Id_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeUInt32(4, modle_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeFloat(5, value_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeUInt32(6, status_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeUInt32(7, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, rtuid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, deviceid_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, md44Id_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, modle_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, value_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, status_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.normal.protobuf.XhRtu.CmdRES parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.normal.protobuf.XhRtu.CmdRES prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.normal.protobuf.XhRtu.CmdRESOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.normal.protobuf.XhRtu.internal_static_xh_rtu_CmdRES_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.normal.protobuf.XhRtu.internal_static_xh_rtu_CmdRES_fieldAccessorTable;
+      }
+      
+      // Construct using com.normal.protobuf.XhRtu.CmdRES.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        rtuid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        deviceid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        md44Id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        modle_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        value_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        status_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        type_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.normal.protobuf.XhRtu.CmdRES.getDescriptor();
+      }
+      
+      public com.normal.protobuf.XhRtu.CmdRES getDefaultInstanceForType() {
+        return com.normal.protobuf.XhRtu.CmdRES.getDefaultInstance();
+      }
+      
+      public com.normal.protobuf.XhRtu.CmdRES build() {
+        com.normal.protobuf.XhRtu.CmdRES result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.normal.protobuf.XhRtu.CmdRES buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.normal.protobuf.XhRtu.CmdRES result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.normal.protobuf.XhRtu.CmdRES buildPartial() {
+        com.normal.protobuf.XhRtu.CmdRES result = new com.normal.protobuf.XhRtu.CmdRES(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.rtuid_ = rtuid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.deviceid_ = deviceid_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.md44Id_ = md44Id_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.modle_ = modle_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.value_ = value_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.status_ = status_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.type_ = type_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.normal.protobuf.XhRtu.CmdRES) {
+          return mergeFrom((com.normal.protobuf.XhRtu.CmdRES)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.normal.protobuf.XhRtu.CmdRES other) {
+        if (other == com.normal.protobuf.XhRtu.CmdRES.getDefaultInstance()) return this;
+        if (other.hasRtuid()) {
+          setRtuid(other.getRtuid());
+        }
+        if (other.hasDeviceid()) {
+          setDeviceid(other.getDeviceid());
+        }
+        if (other.hasMd44Id()) {
+          setMd44Id(other.getMd44Id());
+        }
+        if (other.hasModle()) {
+          setModle(other.getModle());
+        }
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
+        if (other.hasType()) {
+          setType(other.getType());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasRtuid()) {
+          
+          return false;
+        }
+        if (!hasDeviceid()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              rtuid_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              deviceid_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              md44Id_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              modle_ = input.readUInt32();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000010;
+              value_ = input.readFloat();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              status_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              type_ = input.readUInt32();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required uint32 rtuid = 1;
+      private int rtuid_ ;
+      public boolean hasRtuid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getRtuid() {
+        return rtuid_;
+      }
+      public Builder setRtuid(int value) {
+        bitField0_ |= 0x00000001;
+        rtuid_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRtuid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rtuid_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // required uint32 deviceid = 2;
+      private int deviceid_ ;
+      public boolean hasDeviceid() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getDeviceid() {
+        return deviceid_;
+      }
+      public Builder setDeviceid(int value) {
+        bitField0_ |= 0x00000002;
+        deviceid_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearDeviceid() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        deviceid_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional uint32 md44id = 3;
+      private int md44Id_ ;
+      public boolean hasMd44Id() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public int getMd44Id() {
+        return md44Id_;
+      }
+      public Builder setMd44Id(int value) {
+        bitField0_ |= 0x00000004;
+        md44Id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearMd44Id() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        md44Id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional uint32 modle = 4;
+      private int modle_ ;
+      public boolean hasModle() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public int getModle() {
+        return modle_;
+      }
+      public Builder setModle(int value) {
+        bitField0_ |= 0x00000008;
+        modle_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearModle() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        modle_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional float value = 5;
+      private float value_ ;
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public float getValue() {
+        return value_;
+      }
+      public Builder setValue(float value) {
+        bitField0_ |= 0x00000010;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        value_ = 0F;
+        onChanged();
+        return this;
+      }
+      
+      // optional uint32 status = 6;
+      private int status_ ;
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public int getStatus() {
+        return status_;
+      }
+      public Builder setStatus(int value) {
+        bitField0_ |= 0x00000020;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional uint32 type = 7;
+      private int type_ ;
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public int getType() {
+        return type_;
+      }
+      public Builder setType(int value) {
+        bitField0_ |= 0x00000040;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:xh_rtu.CmdRES)
+    }
+    
+    static {
+      defaultInstance = new CmdRES(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:xh_rtu.CmdRES)
+  }
+  
   public interface OnOfflineREQOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -2784,9 +3480,9 @@ public final class XhRtu {
   public interface SynchronizeRTimeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
-    // required uint32 time = 1;
+    // required float time = 1;
     boolean hasTime();
-    int getTime();
+    float getTime();
   }
   public static final class SynchronizeRTime extends
       com.google.protobuf.GeneratedMessage
@@ -2817,18 +3513,18 @@ public final class XhRtu {
     }
     
     private int bitField0_;
-    // required uint32 time = 1;
+    // required float time = 1;
     public static final int TIME_FIELD_NUMBER = 1;
-    private int time_;
+    private float time_;
     public boolean hasTime() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public int getTime() {
+    public float getTime() {
       return time_;
     }
     
     private void initFields() {
-      time_ = 0;
+      time_ = 0F;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2847,7 +3543,7 @@ public final class XhRtu {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, time_);
+        output.writeFloat(1, time_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2860,7 +3556,7 @@ public final class XhRtu {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, time_);
+          .computeFloatSize(1, time_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2986,7 +3682,7 @@ public final class XhRtu {
       
       public Builder clear() {
         super.clear();
-        time_ = 0;
+        time_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -3084,9 +3780,9 @@ public final class XhRtu {
               }
               break;
             }
-            case 8: {
+            case 13: {
               bitField0_ |= 0x00000001;
-              time_ = input.readUInt32();
+              time_ = input.readFloat();
               break;
             }
           }
@@ -3095,15 +3791,15 @@ public final class XhRtu {
       
       private int bitField0_;
       
-      // required uint32 time = 1;
-      private int time_ ;
+      // required float time = 1;
+      private float time_ ;
       public boolean hasTime() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public int getTime() {
+      public float getTime() {
         return time_;
       }
-      public Builder setTime(int value) {
+      public Builder setTime(float value) {
         bitField0_ |= 0x00000001;
         time_ = value;
         onChanged();
@@ -3111,7 +3807,7 @@ public final class XhRtu {
       }
       public Builder clearTime() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        time_ = 0;
+        time_ = 0F;
         onChanged();
         return this;
       }
@@ -3130,9 +3826,9 @@ public final class XhRtu {
   public interface SynchronizeITimeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
-    // required uint32 time = 1;
+    // required float time = 1;
     boolean hasTime();
-    int getTime();
+    float getTime();
   }
   public static final class SynchronizeITime extends
       com.google.protobuf.GeneratedMessage
@@ -3163,18 +3859,18 @@ public final class XhRtu {
     }
     
     private int bitField0_;
-    // required uint32 time = 1;
+    // required float time = 1;
     public static final int TIME_FIELD_NUMBER = 1;
-    private int time_;
+    private float time_;
     public boolean hasTime() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public int getTime() {
+    public float getTime() {
       return time_;
     }
     
     private void initFields() {
-      time_ = 0;
+      time_ = 0F;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3193,7 +3889,7 @@ public final class XhRtu {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, time_);
+        output.writeFloat(1, time_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3206,7 +3902,7 @@ public final class XhRtu {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, time_);
+          .computeFloatSize(1, time_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3332,7 +4028,7 @@ public final class XhRtu {
       
       public Builder clear() {
         super.clear();
-        time_ = 0;
+        time_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -3430,9 +4126,9 @@ public final class XhRtu {
               }
               break;
             }
-            case 8: {
+            case 13: {
               bitField0_ |= 0x00000001;
-              time_ = input.readUInt32();
+              time_ = input.readFloat();
               break;
             }
           }
@@ -3441,15 +4137,15 @@ public final class XhRtu {
       
       private int bitField0_;
       
-      // required uint32 time = 1;
-      private int time_ ;
+      // required float time = 1;
+      private float time_ ;
       public boolean hasTime() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public int getTime() {
+      public float getTime() {
         return time_;
       }
-      public Builder setTime(int value) {
+      public Builder setTime(float value) {
         bitField0_ |= 0x00000001;
         time_ = value;
         onChanged();
@@ -3457,7 +4153,7 @@ public final class XhRtu {
       }
       public Builder clearTime() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        time_ = 0;
+        time_ = 0F;
         onChanged();
         return this;
       }
@@ -3476,9 +4172,9 @@ public final class XhRtu {
   public interface SynchronizeSpdTimeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
-    // required uint32 time = 1;
+    // required float time = 1;
     boolean hasTime();
-    int getTime();
+    float getTime();
   }
   public static final class SynchronizeSpdTime extends
       com.google.protobuf.GeneratedMessage
@@ -3509,18 +4205,18 @@ public final class XhRtu {
     }
     
     private int bitField0_;
-    // required uint32 time = 1;
+    // required float time = 1;
     public static final int TIME_FIELD_NUMBER = 1;
-    private int time_;
+    private float time_;
     public boolean hasTime() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public int getTime() {
+    public float getTime() {
       return time_;
     }
     
     private void initFields() {
-      time_ = 0;
+      time_ = 0F;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3539,7 +4235,7 @@ public final class XhRtu {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, time_);
+        output.writeFloat(1, time_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3552,7 +4248,7 @@ public final class XhRtu {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, time_);
+          .computeFloatSize(1, time_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3678,7 +4374,7 @@ public final class XhRtu {
       
       public Builder clear() {
         super.clear();
-        time_ = 0;
+        time_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -3776,9 +4472,9 @@ public final class XhRtu {
               }
               break;
             }
-            case 8: {
+            case 13: {
               bitField0_ |= 0x00000001;
-              time_ = input.readUInt32();
+              time_ = input.readFloat();
               break;
             }
           }
@@ -3787,15 +4483,15 @@ public final class XhRtu {
       
       private int bitField0_;
       
-      // required uint32 time = 1;
-      private int time_ ;
+      // required float time = 1;
+      private float time_ ;
       public boolean hasTime() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public int getTime() {
+      public float getTime() {
         return time_;
       }
-      public Builder setTime(int value) {
+      public Builder setTime(float value) {
         bitField0_ |= 0x00000001;
         time_ = value;
         onChanged();
@@ -3803,7 +4499,7 @@ public final class XhRtu {
       }
       public Builder clearTime() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        time_ = 0;
+        time_ = 0F;
         onChanged();
         return this;
       }
@@ -3834,6 +4530,11 @@ public final class XhRtu {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_xh_rtu_CmdREQ_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_xh_rtu_CmdRES_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_xh_rtu_CmdRES_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_xh_rtu_OnOfflineREQ_descriptor;
   private static
@@ -3878,14 +4579,17 @@ public final class XhRtu {
       "tBeatOUT\022\022\n\nworkstatus\030\001 \002(\r\"u\n\006CmdREQ\022\r" +
       "\n\005rtuid\030\001 \002(\r\022\020\n\010deviceid\030\002 \002(\r\022\016\n\006md44i" +
       "d\030\003 \001(\r\022\r\n\005modle\030\004 \001(\r\022\r\n\005value\030\005 \001(\002\022\016\n" +
-      "\006status\030\006 \001(\r\022\014\n\004type\030\007 \001(\r\"\035\n\014OnOffline" +
-      "REQ\022\r\n\005rtuid\030\001 \002(\005\"o\n\014OnOfflineRES\0221\n\007rt" +
-      "ustat\030\001 \003(\0132 .xh_rtu.OnOfflineRES.OnOffS" +
-      "tatus\032,\n\013OnOffStatus\022\r\n\005rtuid\030\001 \002(\005\022\016\n\006s" +
-      "tatus\030\002 \002(\005\" \n\020SynchronizeRTime\022\014\n\004time\030",
-      "\001 \002(\r\" \n\020SynchronizeITime\022\014\n\004time\030\001 \002(\r\"" +
-      "\"\n\022SynchronizeSpdTime\022\014\n\004time\030\001 \002(\rB\034\n\023c" +
-      "om.normal.protobufB\005XhRtu"
+      "\006status\030\006 \001(\r\022\014\n\004type\030\007 \001(\r\"u\n\006CmdRES\022\r\n" +
+      "\005rtuid\030\001 \002(\r\022\020\n\010deviceid\030\002 \002(\r\022\016\n\006md44id" +
+      "\030\003 \001(\r\022\r\n\005modle\030\004 \001(\r\022\r\n\005value\030\005 \001(\002\022\016\n\006" +
+      "status\030\006 \001(\r\022\014\n\004type\030\007 \001(\r\"\035\n\014OnOfflineR" +
+      "EQ\022\r\n\005rtuid\030\001 \002(\005\"o\n\014OnOfflineRES\0221\n\007rtu",
+      "stat\030\001 \003(\0132 .xh_rtu.OnOfflineRES.OnOffSt" +
+      "atus\032,\n\013OnOffStatus\022\r\n\005rtuid\030\001 \002(\005\022\016\n\006st" +
+      "atus\030\002 \002(\005\" \n\020SynchronizeRTime\022\014\n\004time\030\001" +
+      " \002(\002\" \n\020SynchronizeITime\022\014\n\004time\030\001 \002(\002\"\"" +
+      "\n\022SynchronizeSpdTime\022\014\n\004time\030\001 \002(\002B\034\n\023co" +
+      "m.normal.protobufB\005XhRtu"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3916,8 +4620,16 @@ public final class XhRtu {
               new java.lang.String[] { "Rtuid", "Deviceid", "Md44Id", "Modle", "Value", "Status", "Type", },
               com.normal.protobuf.XhRtu.CmdREQ.class,
               com.normal.protobuf.XhRtu.CmdREQ.Builder.class);
-          internal_static_xh_rtu_OnOfflineREQ_descriptor =
+          internal_static_xh_rtu_CmdRES_descriptor =
             getDescriptor().getMessageTypes().get(3);
+          internal_static_xh_rtu_CmdRES_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_xh_rtu_CmdRES_descriptor,
+              new java.lang.String[] { "Rtuid", "Deviceid", "Md44Id", "Modle", "Value", "Status", "Type", },
+              com.normal.protobuf.XhRtu.CmdRES.class,
+              com.normal.protobuf.XhRtu.CmdRES.Builder.class);
+          internal_static_xh_rtu_OnOfflineREQ_descriptor =
+            getDescriptor().getMessageTypes().get(4);
           internal_static_xh_rtu_OnOfflineREQ_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_xh_rtu_OnOfflineREQ_descriptor,
@@ -3925,7 +4637,7 @@ public final class XhRtu {
               com.normal.protobuf.XhRtu.OnOfflineREQ.class,
               com.normal.protobuf.XhRtu.OnOfflineREQ.Builder.class);
           internal_static_xh_rtu_OnOfflineRES_descriptor =
-            getDescriptor().getMessageTypes().get(4);
+            getDescriptor().getMessageTypes().get(5);
           internal_static_xh_rtu_OnOfflineRES_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_xh_rtu_OnOfflineRES_descriptor,
@@ -3941,7 +4653,7 @@ public final class XhRtu {
               com.normal.protobuf.XhRtu.OnOfflineRES.OnOffStatus.class,
               com.normal.protobuf.XhRtu.OnOfflineRES.OnOffStatus.Builder.class);
           internal_static_xh_rtu_SynchronizeRTime_descriptor =
-            getDescriptor().getMessageTypes().get(5);
+            getDescriptor().getMessageTypes().get(6);
           internal_static_xh_rtu_SynchronizeRTime_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_xh_rtu_SynchronizeRTime_descriptor,
@@ -3949,7 +4661,7 @@ public final class XhRtu {
               com.normal.protobuf.XhRtu.SynchronizeRTime.class,
               com.normal.protobuf.XhRtu.SynchronizeRTime.Builder.class);
           internal_static_xh_rtu_SynchronizeITime_descriptor =
-            getDescriptor().getMessageTypes().get(6);
+            getDescriptor().getMessageTypes().get(7);
           internal_static_xh_rtu_SynchronizeITime_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_xh_rtu_SynchronizeITime_descriptor,
@@ -3957,7 +4669,7 @@ public final class XhRtu {
               com.normal.protobuf.XhRtu.SynchronizeITime.class,
               com.normal.protobuf.XhRtu.SynchronizeITime.Builder.class);
           internal_static_xh_rtu_SynchronizeSpdTime_descriptor =
-            getDescriptor().getMessageTypes().get(7);
+            getDescriptor().getMessageTypes().get(8);
           internal_static_xh_rtu_SynchronizeSpdTime_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_xh_rtu_SynchronizeSpdTime_descriptor,

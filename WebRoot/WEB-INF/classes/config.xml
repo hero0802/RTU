@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <WebDataBase>
-       <ip>182.61.10.202</ip>
+       <ip>127.0.0.1</ip>
        <port>3306</port>
        <root>root</root>
        <password>xinhong12345</password>

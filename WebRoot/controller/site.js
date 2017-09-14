@@ -141,6 +141,7 @@ xh.loadData = function() {
 
 		// 删除用户
 		$scope.del = function(id) {
+			
 			swal({
 				title : "提示",
 				text : "确定要删除该站点吗？",
@@ -159,7 +160,7 @@ xh.loadData = function() {
 						type : 'post',
 						dataType : "json",
 						data : {
-							deleteids : id
+							deleteids :id
 						},
 						async : false,
 						success : function(data) {
@@ -186,7 +187,7 @@ xh.loadData = function() {
 			var checkVal = [];
 			$("[name='tb-check']:checkbox").each(function() {
 				if ($(this).is(':checked')) {
-					checkVal.push($(this).attr("value"));
+					checkVal.push($(this).attr("siteIdVal"));
 				}
 			});
 			if (checkVal.length < 1) {
