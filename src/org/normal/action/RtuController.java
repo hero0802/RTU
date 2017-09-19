@@ -53,12 +53,23 @@ public class RtuController extends ActionSupport {
 	protected final Log log = LogFactory.getLog(RtuController.class);
 
 	public String data() {	
+		value();
+		String sql="select * from site_lr where siteId='"+rtuStruct.getRtuId()+"' "
+				+ "and md44id='"+rtuStruct.getMd44id()+"' "
+			    + "and deviceId='"+rtuStruct.getDeviceId()+"' "
+			    + "and model='"+rtuStruct.getModle()+"'";
+		if(!mysql.isExists(sql)){
+			this.success=false;
+			this.message="监测点不存在，请检查输入是否有误";
+			log.error("监测点不存在");
+			return SUCCESS;
+		}
 		try {
 			if (TcpClient.getSocket().isConnected()) {
 				TcpClient.setR_value(-5);
 				log.info("测试地阻");
-				value();
-				Thread.sleep(28000);
+				
+				Thread.sleep(35000);
 				String key=rtuStruct.getRtuId()+"-"+rtuStruct.getMd44id()+"-"+rtuStruct.getDeviceId()+"-"+rtuStruct.getModle();
 				
 				

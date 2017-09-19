@@ -39,7 +39,7 @@ public class TcpClient extends Thread {
 	private String ip;
 	private int port;
 	private static Socket socket;
-	private static int timeout = 1 * 65 * 1000;
+	private static int timeout = 1 * 80 * 1000;
 	private boolean connected = false;
 
 	private static int dataLen = 0;

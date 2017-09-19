@@ -9,16 +9,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jxl.Workbook;
@@ -34,18 +29,14 @@ import jxl.write.WritableCellFormat;
 import jxl.write.WritableFont;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
-import net.sf.ehcache.search.expression.And;
-import nl.justobjects.pushlet.util.Log;
 
-import org.apache.commons.validator.Var;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.struts2.ServletActionContext;
 import org.normal.function.Func;
 import org.normal.function.JSON;
-import org.normal.javabean.Rbean;
 import org.normal.sql.MysqlConnection;
 
-import com.normal.socket.RTUStruct;
-import com.normal.socket.TcpClient;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
@@ -115,10 +106,12 @@ public class Site extends ActionSupport {
 
 	// private String
 	private String xmlPath = Site.class.getResource("/config.xml").getPath();
+	
 
 	private MysqlConnection mysql = new MysqlConnection();
 	private Func fun = new Func();
 	private JSON json = new JSON();
+	protected final Log log = LogFactory.getLog(Site.class);
 
 	// private float i_max = Float.parseFloat(fun.readXml("System",
 	// "i_maxValues"));
@@ -1936,6 +1929,9 @@ public class Site extends ActionSupport {
 				+ "' and siteId='" + siteId + "'and model='" + spd_model + "'";
 		String sql2="delete from site_spd_h where deviceId='" + spd_deviceId
 				+ "' and siteId='" + siteId + "'and model='" + spd_model + "'";
+		
+		log.info("[delete]->spd: siteId="+siteId+";deviceId="+spd_deviceId+";model="+spd_model);
+		
 		mysql.Update(sql);
 		mysql.Update(sql2);
 		this.success = true;
@@ -1997,6 +1993,7 @@ public class Site extends ActionSupport {
 				+ "' and siteId=" + siteId;
 		String sql2 = "delete from site_li_h where deviceId='" + i_deviceId
 				+ "' and siteId=" + siteId;
+		log.info("[delete]->li: siteId="+siteId+";deviceId="+i_deviceId);
 		mysql.Update(sql);
 		mysql.Update(sql2);
 		this.success = true;
@@ -2125,8 +2122,10 @@ public class Site extends ActionSupport {
 		String sql = "delete from site_lr where deviceId='" + r_deviceId
 				+ "' and siteId='" + siteId + "'and md44id='" + r_md44id
 				+ "'and model='" + r_model + "'";
-		String sql2 = "delete from site_lr_h where deviceId='" + r_deviceId
-				+ "' and siteId='" + siteId + "'and model='" + r_model + "'";
+		String sql2 = "delete from site_lr_h where deviceId=" + r_deviceId
+				+ " and siteId=" + siteId + " and model=" + r_model;
+		log.info(sql2);
+		log.info("[delete]->lr: siteId="+siteId+";deviceId="+r_deviceId+";model="+r_model);
 		mysql.Update(sql);
 		mysql.Update(sql2);
 		this.success = true;
@@ -2167,6 +2166,7 @@ public class Site extends ActionSupport {
 		String sql6 = "delete from site_lr_h where siteId in (" + deleteids + ")";
 		String sql7 = "delete from site_spd_h where siteId in (" + deleteids + ")";
 		String sql8 = "delete from md44 where siteId in (" + deleteids + ")";
+		log.info("[delete]->site: siteId="+deleteids);
 		mysql.Update(sql);
 		mysql.Update(sql2);
 		mysql.Update(sql3);

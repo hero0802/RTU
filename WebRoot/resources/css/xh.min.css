@@ -14,6 +14,26 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased!important
 }
+.navbar-right {
+	margin-left: 160px;
+	position: fixed;
+	right: 35px;
+	top: 5px;
+	padding: 0px 0px 8px 0px;
+	border: 0px solid #f2f2f2;
+	width: auto;
+	height: 50px;
+	cursor: pointer;
+}
+.pull-right {
+	/* margin-left:160px; */
+	padding: 0px 0px 4px 12px;
+	border: 0px solid #f2f2f2;
+	width: auto;
+	/* height: 42px; */
+	float: right;
+	cursor: pointer;
+}
 /* 网页容器 */
 #container {
 	min-height: 100vh;

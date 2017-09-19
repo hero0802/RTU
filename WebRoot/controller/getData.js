@@ -154,7 +154,7 @@ app.controller("rtu", function($scope, $http) {
 	
 });
 var timeout = false; //启动及关闭按钮  
-var i=30;
+var i=35;
 var clearInter;
 xh.start=function(){
 	$("#sendBtn").attr("disabled","disabled");
@@ -175,10 +175,19 @@ xh.start=function(){
 			$("#sendBtn").removeAttr("disabled");//将按钮可用
 			clearInterval(clearInter);
 			$("#sendBtn").text('获取数据');
-			i=30;
+			i=35;
 			if (data.success) {
-				toastr.success("获取数据成功",'提示');	
-				$("#r-value").html(data.value);
+				toastr.success("获取数据完成",'提示');
+				if(data.value==0){
+					swal({
+						title : "提示",
+						text : "获取地阻失败",
+						type : "error"
+					});
+				}else{
+					$("#r-value").html(data.value);
+				}
+				
 				
 			} else {
 				
@@ -194,7 +203,7 @@ xh.start=function(){
 			$("#sendBtn").removeAttr("disabled");//将按钮可用
 			clearInterval(clearInter);
 			$("#sendBtn").text('获取数据');
-			i=30;
+			i=35;
 		}
 	});
 };
@@ -205,7 +214,7 @@ function startInterval()
 	if(i==0){
 		clearInterval(clearInter);
 		$("#sendBtn").text('获取数据');
-		i=30;
+		i=35;
 	}
 	i--;
 	
