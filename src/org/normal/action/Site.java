@@ -2063,13 +2063,13 @@ public class Site extends ActionSupport {
 	// 添加地阻检测仪
 	public String add_lr() {
 		String sql_exists="";
-		if(flag==1){
+		if(flag==0){
 			sql_exists = "select deviceId from site_lr where siteId='"
 					+ siteId + "' and deviceId='" + r_deviceId + "' ";
 		}else{
 			sql_exists = "select deviceId from site_lr where siteId='"
 					+ siteId + "' and deviceId='" + r_deviceId + "'and md44id='"
-					+ r_md44id + "'";
+					+ r_md44id + "' and model='"+r_model+"'";
 		}
 		
 		String sql = "insert into site_lr(deviceId,siteId,md44id,`name`,model,modelName,type,maxValues,address,flag,r1,r2)VALUES('"
