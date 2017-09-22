@@ -69,7 +69,7 @@ public class RtuController extends ActionSupport {
 				TcpClient.setR_value(-5);
 				log.info("测试地阻");
 				
-				Thread.sleep(35000);
+				Thread.sleep(40000);
 				String key=rtuStruct.getRtuId()+"-"+rtuStruct.getMd44id()+"-"+rtuStruct.getDeviceId()+"-"+rtuStruct.getModle();
 				
 				

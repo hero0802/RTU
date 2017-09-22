@@ -154,7 +154,7 @@ app.controller("rtu", function($scope, $http) {
 	
 });
 var timeout = false; //启动及关闭按钮  
-var i=35;
+var i=40;
 var clearInter;
 xh.start=function(){
 	$("#sendBtn").attr("disabled","disabled");
@@ -175,7 +175,7 @@ xh.start=function(){
 			$("#sendBtn").removeAttr("disabled");//将按钮可用
 			clearInterval(clearInter);
 			$("#sendBtn").text('获取数据');
-			i=35;
+			i=40;
 			if (data.success) {
 				toastr.success("获取数据完成",'提示');
 				if(data.value==0){
@@ -203,7 +203,7 @@ xh.start=function(){
 			$("#sendBtn").removeAttr("disabled");//将按钮可用
 			clearInterval(clearInter);
 			$("#sendBtn").text('获取数据');
-			i=35;
+			i=40;
 		}
 	});
 };
@@ -214,7 +214,7 @@ function startInterval()
 	if(i==0){
 		clearInterval(clearInter);
 		$("#sendBtn").text('获取数据');
-		i=35;
+		i=40;
 	}
 	i--;
 	
