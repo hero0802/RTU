@@ -185,9 +185,9 @@
 										<td>{{x.siteId}}</td>
 										<td style="text-align: center">{{x.deviceId}}</td>
 										<td>{{x.name}}</td>
-										<td ng-if="x.value<0" ng-class="{true: 'td-success', false: 'td-warning'}[x.value>-x.maxValues]" style="text-align: center">{{x.value}}</td>
+										<td ng-if="x.value<0" ng-class="{true: 'td-success', false: 'td-error'}[x.value>-x.maxValues]" style="text-align: center">{{x.value}}</td>
 										<td ng-if="x.value==0">未测试</td>
-										<td ng-if="x.value>0" ng-class="{true: 'td-success', false: 'td-warning'}[x.value<x.maxValues]" style="text-align: center">{{x.value}}</td>
+										<td ng-if="x.value>0" ng-class="{true: 'td-success', false: 'td-error'}[x.value<x.maxValues]" style="text-align: center">{{x.value}}</td>
 										<td ng-if="x.value==0" style="text-align: center"></td>
 										<td ng-if="x.value>0" style="text-align: center">{{x.time}}</td>
 									</tr>
