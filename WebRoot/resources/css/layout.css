@@ -121,8 +121,8 @@ body.fullscreen-panel-mode {
 	/* position: absolute; */
 	/* background-color:#fff; */
 	background-color:rgba(0,0,0, .4);
-	/* max-width: 480px; */
-	max-width:530px;
+	min-width: 600px; 
+	max-width:600px;
 	height:350px;
 	margin:auto;
 	margin-top:15%;

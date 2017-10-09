@@ -1,0 +1,35 @@
+package Public_Call;
+option java_package = "com.talk.common";
+option java_outer_classname = "PublicCallProtobuf";
+
+message STDbGpsUserSync {
+  required uint32 operation=1;
+  required uint32 gpsUserId=2;
+}
+
+message STDbUserSync {
+  required uint32 operation=1;
+  required string userId=2;
+}
+
+message STDbGroupSync {
+  required uint32 operation=1;
+  required string groupId=2;
+}
+
+message STDbUser2GroupSync {
+  required uint32 operation=1;
+  required string userId=2;
+  required string groupId=3;
+}
+
+message STDbBureauDirectionSync {
+  required uint32 operation=1;
+  required string bdId=2;
+}
+
+message STDbGroup2BdSync {
+  required uint32 operation=1;
+  required string groupId=2;
+  required string bdId=3;
+}

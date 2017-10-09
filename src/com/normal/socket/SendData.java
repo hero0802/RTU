@@ -10,6 +10,7 @@ import org.apache.commons.logging.LogFactory;
 import org.normal.action.NetDataTypeTransform;
 import org.normal.function.Func;
 
+import com.normal.protobuf.PublicCallProtobuf;
 import com.normal.protobuf.XhRtu;
 
 public class SendData {
@@ -86,6 +87,7 @@ public class SendData {
 		// 创建客户端的Socket服务，指定目的主机和端口。
 		NetDataTypeTransform dd = new NetDataTypeTransform();
 		XhRtu.OnOfflineREQ.Builder builder = XhRtu.OnOfflineREQ.newBuilder();
+
 		builder.setRtuid(rtuId);
 		XhRtu.OnOfflineREQ dsReq = builder.build();
 		byte[] buffer = dsReq.toByteArray();
